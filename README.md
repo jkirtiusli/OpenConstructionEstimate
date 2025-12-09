@@ -1,0 +1,409 @@
+<p align="center">
+  <img src="https://openconstructionestimate.com/assets/logo_app_expert_1763236513795-B8WsUpWq.png" alt="OpenConstructionEstimate" width="600">
+</p>
+
+<h1 align="center">OpenConstructionEstimate</h1>
+<h3 align="center">DDC CWICR — Construction Work Items, Components & Resources</h3>
+
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#data-schema">Schema</a> •
+  <a href="#methodology">Methodology</a> •
+  <a href="#vector-database">Qdrant</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#integration">Integration</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Work_Items-55,719-2563eb?style=for-the-badge" alt="Work Items">
+  <img src="https://img.shields.io/badge/Resources-27,672-059669?style=for-the-badge" alt="Resources">
+  <img src="https://img.shields.io/badge/Languages-9-d97706?style=for-the-badge" alt="Languages">
+  <img src="https://img.shields.io/badge/Countries-10+-dc2626?style=for-the-badge" alt="Countries">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-CC_BY_4.0-green?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/Version-2025.1-blue?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/Embeddings-OpenAI_3072d-412991?style=flat-square" alt="Embeddings">
+  <img src="https://img.shields.io/badge/Vector_DB-Qdrant-dc382d?style=flat-square" alt="Qdrant">
+  <img src="https://img.shields.io/badge/Automation-n8n-ea4b71?style=flat-square" alt="n8n">
+</p>
+
+<p align="center">
+  <a href="https://openconstructionestimate.com">
+    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
+
+## About
+
+**DDC CWICR** (Construction Work Items, Components & Resources) is an open database for construction cost estimation, covering the full spectrum of construction work — from earthworks and concrete to specialized MEP operations.
+
+The database harmonizes construction standards across multiple regions, creating a unified regulatory framework for capital project management. Built on official cost estimation standards from Eurasian countries, it has been systematized into a unified structure and presented in **9 language versions** with regional pricing variants.
+
+```mermaid
+flowchart TB
+    subgraph Source["📦 Data Source"]
+        CWICR[(DDC CWICR<br/>────────────<br/>55,719 Work Items<br/>27,672 Resources<br/>85 Fields per Record)]
+    end
+
+    subgraph Processing["⚙️ Processing Pipeline"]
+        direction LR
+        ETL[["🔄 ETL<br/>Extraction &<br/>Transformation"]]
+        TRANS[["🌐 Translation<br/>9 Languages"]]
+        EMBED[["🧠 Vectorization<br/>OpenAI 3072d"]]
+        ETL --> TRANS --> EMBED
+    end
+
+    subgraph Outputs["📤 Output Formats"]
+        XLSX[("📊 Excel<br/>.xlsx")]
+        PARQUET[("⚡ Parquet<br/>.parquet")]
+        CSV[("📄 CSV<br/>.csv")]
+        QDRANT[("🔍 Qdrant<br/>.snapshot")]
+    end
+
+    subgraph Apps["🎯 Applications"]
+        SEARCH["🔎 Semantic<br/>Search"]
+        BIM["🏗️ BIM 5D<br/>Integration"]
+        RAG["🤖 RAG<br/>Systems"]
+        BI["📈 BI<br/>Analytics"]
+    end
+
+    Source --> Processing
+    Processing --> XLSX & PARQUET & CSV & QDRANT
+    XLSX & PARQUET & CSV --> BI & BIM
+    QDRANT --> SEARCH & RAG & BIM
+
+    style Source fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Processing fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style Outputs fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Apps fill:#fce7f3,stroke:#db2777,stroke-width:2px
+```
+
+### Historical Context
+
+The resource-based methodology for construction work standardization has been continuously evolving since the **1920s** — from early production norms to modern digital reference books. Over a century, the system has progressed from manual calculations to machine-readable databases while preserving its fundamental principle: precise recording of physical resources per unit of construction output.
+
+Regional standard codes include: **ENIR, GESN, FER** (Russia & CIS), **AzDTN** (Azerbaijan), **ShNQK** (Uzbekistan), **MKS ChT** (Tajikistan), **SNT** (Turkmenistan), **BNbD** (Mongolia), **Định Mức** (Vietnam), **定额** (China).
+
+## Data Schema
+
+The database contains **85 fields** organized into logical groups. Each record represents either a work item (rate) or a resource with full cost breakdown.
+
+```mermaid
+erDiagram
+    RATE ||--o{ RESOURCE : contains
+    RATE ||--o{ LABOR : requires
+    RATE ||--o{ MACHINERY : uses
+    RATE ||--o{ PRICE_VARIANT : has
+
+    RATE {
+        string rate_code PK "MEKA_KASA_KAKATO_KAME"
+        string rate_original_name "Einbau von Trennwänden..."
+        string rate_unit "100 m2"
+        string category_type "BAUARBEITEN"
+        string collection_name "Holzkonstruktionen"
+        string department_name "TRENNWÄNDE..."
+        string section_name "Einbau von Trennwänden..."
+        text work_composition_text
+    }
+
+    RESOURCE {
+        string resource_code PK "KAME-NE-KAME-KARI"
+        string resource_name "Gipskartonplatten"
+        string resource_unit "m2"
+        float resource_quantity "632.0"
+        float resource_price_per_unit_eur "5.02"
+        float resource_cost_eur "3170.73"
+        boolean is_material
+        boolean is_abstract
+    }
+
+    LABOR {
+        string resource_code FK
+        float labor_hours_workers "172"
+        float labor_hours_machinists "1.67"
+        int count_workers_per_unit "172"
+        int count_machinists_per_unit "2"
+        float cost_of_working_hours "3088.11"
+    }
+
+    MACHINERY {
+        string machine_class2_name "Krane"
+        string machine_class3_name "Krane auf Fahrgestellen"
+        float electricity_consumption_kwh "0.23"
+        float price_machinist_wages "13.56"
+        float total_value_machinery "64.18"
+    }
+
+    PRICE_VARIANT {
+        float price_est_median "5.02"
+        float price_est_min "3.03"
+        float price_est_max "7.99"
+        int position_count "24"
+        string variable_parts "glasfaserverstärkt..."
+    }
+```
+
+### Field Groups
+
+**Classification** — `category_type`, `collection_code`, `collection_name`, `department_code`, `department_name`, `department_type`, `section_name`, `section_type`, `subsection_code`, `subsection_name`
+
+**Work Item (Rate)** — `rate_code`, `rate_original_name`, `rate_final_name`, `rate_unit`, `row_type`, `is_scope`, `is_abstract`, `is_machine`, `is_labor`, `is_material`, `work_composition_text`
+
+**Resources** — `resource_code`, `resource_name`, `resource_unit`, `resource_quantity`, `parameter_resource_quantity`, `resource_price_per_unit_eur_current`, `resource_cost_eur`
+
+**Labor** — `count_workers_per_unit`, `count_engineers_per_unit`, `count_machinists_per_unit`, `count_total_people_per_unit`, `labor_hours_construction_workers`, `labor_hours_machinists`, `labor_hours_engineers`, `total_labor_hours_workers_machinists`, `total_labor_hours_all_personnel`, `cost_of_working_hours`, `count_people_per_day`
+
+**Machinery** — `machine_class2_name`, `machine_class3_name`, `personnel_machinist_code`, `personnel_machinist_grade`, `price_machinist_wages`, `price_relocation_included`, `price_cost_without_wages`, `electricity_consumption_kwh_per_machine_hour`, `electricity_cost_per_unit`, `electricity_cost_total_sum`, `cost_machinist_sum`, `total_value_machinery_equipment`
+
+**Price Variants** — `price_code_prefix`, `price_abstract_resource_common_start`, `price_abstract_resource_variable_parts`, `price_abstract_resource_position_count`, `price_abstract_resource_est_price_min`, `price_abstract_resource_est_price_max`, `price_abstract_resource_est_price_mean`, `price_abstract_resource_est_price_median`, `price_abstract_resource_unit`, `abstract_resource_tech_group`
+
+**Aggregates** — `total_cost_per_position`, `total_material_cost_per_position`, `total_resource_cost_per_position`, `total_value_abstract_resources`, `materials_resource_cost_eur`
+
+**Mass & Services** — `mass_name`, `mass_value`, `mass_unit`, `service_category`, `service_type`, `parameter_service_code`, `parameter_service_unit`, `parameter_service_name`, `parameter_service_quantity`, `service_cost_sum`
+
+## Methodology
+
+The key value of **Resource-Based Costing** is the separation of unchanging production technology from the volatile financial component. It is based on the physical "first principles" of construction:
+
+```mermaid
+flowchart LR
+    subgraph Tech["📐 FIXED — Technology Norms"]
+        L["👷 Labor<br/>172 hrs/100m²"]
+        M["🧱 Materials<br/>632 m²/100m²"]
+        E["🚜 Equipment<br/>1.67 hrs/100m²"]
+    end
+    
+    subgraph Prices["💰 VARIABLE — Regional Prices"]
+        LP["€17.95/hr"]
+        MP["€5.02/m²"]
+        EP["€38.42/hr"]
+    end
+    
+    subgraph Result["📊 RESULT"]
+        COST["🧾 €7,725.91<br/>per 100m²"]
+    end
+    
+    Tech -->|"×"| Prices --> Result
+    
+    style Tech fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Prices fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style Result fill:#d1fae5,stroke:#059669,stroke-width:2px
+```
+
+**Why it matters:**
+
+- **Transparency** — Pricing without hidden markups, full resource breakdown
+- **Auditability** — Deep-dive capability for investment analysis and verification
+- **Portability** — Region-independent norms applicable across markets
+- **Proven** — Industry standard methodology established over 100+ years
+
+## Available Formats
+
+| Format | Extension | Size | Best For | Features |
+|--------|-----------|------|----------|----------|
+| **Excel** | `.xlsx` | ~150–400 MB | Manual analysis, filtering, pivot tables | Human-readable, full formatting |
+| **Parquet** | `.parquet` | ~55 MB | ETL pipelines, ML training, Big Data | Columnar, excellent compression |
+| **CSV** | `.csv` | ~1.3 GB | Database import, legacy systems | Universal compatibility |
+| **Qdrant** | `.snapshot` | ~1 GB | Semantic search, RAG, AI assistants | Pre-computed OpenAI embeddings (3072d) |
+
+## Vector Database
+
+Ready-to-use Qdrant collections with OpenAI `text-embedding-3-large` embeddings for semantic search across construction work items.
+
+### Collections
+
+🇸🇦 `ddc_cwicr_ar` (Arabic) · 🇨🇳 `ddc_cwicr_zh` (Chinese) · 🇩🇪 `ddc_cwicr_de` (German) · 🇬🇧 `ddc_cwicr_en` (English) · 🇪🇸 `ddc_cwicr_es` (Spanish) · 🇫🇷 `ddc_cwicr_fr` (French) · 🇮🇳 `ddc_cwicr_hi` (Hindi) · 🇧🇷 `ddc_cwicr_pt` (Portuguese) · 🇷🇺 `ddc_cwicr_ru` (Russian)
+
+Each collection contains **55,719 vectors** with full payload metadata.
+
+### Docker Deployment
+
+```yaml
+# docker-compose.yml
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: ddc-cwicr-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+      - ./snapshots:/qdrant/snapshots
+    environment:
+      - QDRANT__LOG_LEVEL=INFO
+    restart: unless-stopped
+
+volumes:
+  qdrant_storage:
+```
+
+```bash
+# Start
+docker-compose up -d
+
+# Import snapshot
+curl -X POST "http://localhost:6333/collections/ddc_cwicr_en/snapshots/upload" \
+  -H "Content-Type: multipart/form-data" \
+  -F "snapshot=@ddc_cwicr_en.snapshot"
+
+# Dashboard: http://localhost:6333/dashboard
+```
+
+## Quick Start
+
+### Python — Tabular Data
+
+```python
+import pandas as pd
+
+# Parquet (recommended)
+df = pd.read_parquet("DDC_CWICR_EN.parquet")
+
+# Excel
+df = pd.read_excel("DDC_CWICR_EN.xlsx")
+
+print(f"Records: {len(df):,} | Fields: {len(df.columns)}")
+print(df[['rate_code', 'rate_original_name', 'rate_unit', 'total_cost_per_position']].head())
+```
+
+### Python — Semantic Search
+
+```python
+from qdrant_client import QdrantClient
+from openai import OpenAI
+
+client = QdrantClient("localhost", port=6333)
+openai = OpenAI()
+
+# Search by natural language
+query = "reinforced concrete foundation pouring"
+embedding = openai.embeddings.create(
+    input=query, 
+    model="text-embedding-3-large"
+).data[0].embedding
+
+results = client.search(
+    collection_name="ddc_cwicr_en",
+    query_vector=embedding, 
+    limit=5
+)
+
+for r in results:
+    print(f"[{r.score:.3f}] {r.payload['rate_code']}: {r.payload['rate_original_name']}")
+```
+
+### Filtered Search
+
+```python
+from qdrant_client.models import Filter, FieldCondition, MatchValue, Range
+
+# By department
+results = client.search(
+    collection_name="ddc_cwicr_en",
+    query_vector=embedding,
+    query_filter=Filter(must=[
+        FieldCondition(key="department_name", match=MatchValue(value="Concrete and Reinforced Concrete"))
+    ]),
+    limit=10
+)
+
+# By price range
+results = client.search(
+    collection_name="ddc_cwicr_en",
+    query_vector=embedding,
+    query_filter=Filter(must=[
+        FieldCondition(key="price_est_median", range=Range(gte=1000, lte=50000))
+    ]),
+    limit=10
+)
+```
+
+## Integration
+
+```mermaid
+flowchart LR
+    subgraph BIM["🏗️ BIM/CAD"]
+        REVIT[Revit] & IFC[IFC] & DWG[DWG]
+    end
+
+    subgraph Pipeline["📊 cad2data"]
+        QTO[Quantity Takeoff] --> MATCH[DDC CWICR Match]
+    end
+
+    subgraph Output["📋 Results"]
+        EST[Cost Estimate] & CO2[CO₂] & REPORT[Reports]
+    end
+
+    BIM --> Pipeline --> Output
+
+    style BIM fill:#e0e7ff,stroke:#4f46e5
+    style Pipeline fill:#fef3c7,stroke:#d97706
+    style Output fill:#d1fae5,stroke:#059669
+```
+
+### Use Cases
+
+**Entry Level** — Cost Benchmarking, Price Indexation, Tender Estimation
+
+**Intermediate** — Localization, ETL/BI Pipelines, CO₂ Calculation
+
+**Advanced** — AI/ML Training, CAD (BIM) 5D, Deep-Dive Investment Audit
+
+### n8n Workflows
+
+Automate construction data processing with ready-made n8n workflows:
+
+<a href="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto">
+  <img src="https://img.shields.io/badge/cad2data_Pipeline-GitHub-181717?style=for-the-badge&logo=github" alt="cad2data Pipeline">
+</a>
+
+## Resources & Community
+
+[![Website](https://img.shields.io/badge/🌐_Website-datadrivenconstruction.io-2563eb?style=flat-square)](https://datadrivenconstruction.io)
+[![Demo](https://img.shields.io/badge/🎯_Demo-openconstructionestimate.com-059669?style=flat-square)](https://openconstructionestimate.com)
+[![GitHub](https://img.shields.io/badge/💻_GitHub-datadrivenconstruction-181717?style=flat-square)](https://github.com/datadrivenconstruction)
+
+[![YouTube](https://img.shields.io/badge/📺_YouTube-@datadrivenconstruction-FF0000?style=flat-square)](https://youtube.com/@datadrivenconstruction)
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-datadrivenconstruction-0A66C2?style=flat-square)](https://linkedin.com/company/datadrivenconstruction)
+[![Telegram](https://img.shields.io/badge/💬_Telegram-datadrivenconstruction-26A5E4?style=flat-square)](https://t.me/datadrivenconstruction)
+
+### Consulting & Training
+
+We work with construction, engineering, and technology firms to implement open data principles — workshops, strategic consulting, prototype development, and ETL pipeline integration.
+
+<a href="mailto:info@datadrivenconstruction.io">
+  <img src="https://img.shields.io/badge/📧_Contact_Us-info@datadrivenconstruction.io-2563eb?style=for-the-badge" alt="Contact">
+</a>
+
+### Contributing
+
+We're looking for enthusiasts who share our mission to make construction more efficient and transparent. Submit workflows, report issues, suggest improvements, help with translations, or star the repository.
+
+<a href="https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR">
+  <img src="https://img.shields.io/badge/⭐_Star_on_GitHub-datadrivenconstruction-181717?style=for-the-badge&logo=github" alt="GitHub">
+</a>
+
+## License
+
+**Database** (DDC CWICR) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free to use, share, and adapt commercially. Attribution: "DDC CWICR by DataDrivenConstruction"
+
+**Code** (workflows, scripts) — [MIT](https://opensource.org/licenses/MIT). Free to use, modify, and distribute without restrictions.
+
+<p align="center">
+  <br/>
+  <b>Unlock the Power of Data in Construction</b><br/>
+  <sub>Move to full-cycle data management where only unified structured data & processes remain</sub>
+</p>
+
+<p align="center">
+  <a href="https://datadrivenconstruction.io">
+    <img src="https://datadrivenconstruction.io/wp-content/uploads/2023/07/DataDrivenConstruction-1-1.png.webp" alt="DataDrivenConstruction" width="180">
+  </a>
+</p>
+
+<p align="center">
+  <sub>© 2025 Artem Boiko · <a href="https://datadrivenconstruction.io">datadrivenconstruction.io</a></sub>
+</p>

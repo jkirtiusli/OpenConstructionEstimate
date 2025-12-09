@@ -229,8 +229,6 @@ Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Rel
 - CSV: `{LANG}_{CITY}_DDC_CWICR_WORK_ITEMS.csv`, `{LANG}_{CITY}_DDC_CWICR_RESOURCES.csv`
 - Qdrant: `{LANG}_{CITY}_DDC_CWICR_EMBEDDINGS_3072_DDC.snapshot`
 
-Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Releases](https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases).
-
 <a href="https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases/tag/v0.1.0">
   <img src="https://img.shields.io/badge/📥_Download_v0.1.0-GitHub_Releases-181717?style=for-the-badge&logo=github" alt="Download v0.1.0">
 </a>

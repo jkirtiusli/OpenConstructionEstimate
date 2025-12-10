@@ -541,6 +541,14 @@ Together we are changing the industry. You can send your solution to info@datadr
 
 **Code** (workflows, scripts) - [MIT](https://opensource.org/licenses/MIT). Free to use, modify, and distribute without restrictions.
 
+## Support the Project
+
+If you find this useful, please consider supporting:
+
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor%20on-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/datadrivenconstruction)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/boikoartem)
+
+
 <p align="left">
   <br/>
   <b>Unlock the Power of Data in Construction</b><br/>

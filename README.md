@@ -279,8 +279,8 @@ Automated cost estimation from Revit/BIM models using AI-driven work decompositi
 
 ```mermaid
 flowchart TB
-    subgraph INPUT["📁 INPUT"]
-        CAD["📐 CAD Project<br/>(RVT / IFC / DWG)"]
+    subgraph INPUT["📁 INPUT<br/><i>CAD • photos • text description</i>"]
+        CAD["📐 Project Input<br/>(RVT / IFC / DWG • photos • text)"]
     end
 
     subgraph EXTRACT["⚙️ EXTRACTION"]
@@ -317,7 +317,6 @@ flowchart TB
     XLSX --> PREP_AI --> PLAN --> S4 --> S5 --> S75
     S75 --> HTML & XLS
 
-    %% Modern, более нейтральные цвета
     style INPUT fill:#f4f4f5,stroke:#d4d4d8,color:#18181b
     style EXTRACT fill:#e0f2fe,stroke:#bae6fd,color:#0f172a
     style PREP fill:#ede9fe,stroke:#ddd6fe,color:#1e1b4b

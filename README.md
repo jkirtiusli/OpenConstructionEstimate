@@ -36,9 +36,10 @@
 
 ## About
 
-**DDC CWICR** (Construction Work Items, Components & Resources) is an open database for construction cost estimation, covering the full spectrum of construction work - from earthworks and concrete to specialized MEP operations. The modern construction industry in Eurasia and the Asia-Pacific region relies on a unified ecosystem of technical standardization that serves as a common engineering language for more than 10 dynamically developing economies.
+**DDC CWICR** (Construction Work Items, Components & Resources) is an open database for estimating construction costs, covering the entire spectrum of construction work—from earthworks and concreting to specialized operations for installing engineering networks. The database is based on sources describing the work of the modern construction industry in Eurasia and the Asia-Pacific region, which relies on a unified technical standardization ecosystem and serves as a common engineering language for more than 10 dynamically developing economies.
 
-The DDC CWICR database (Construction Work Items, Components & Resources) is an attempt to harmonize standards, creating a seamless regulatory space for capital project management across multiple languages. The database covers the full spectrum of construction work: from earthworks and concrete to specialized installation operations.
+The DDC CWICR (Construction Work Items, Components & Resources) database is an attempt to harmonize open standards by creating a single regulatory space for managing capital projects in multiple languages.
+ The database covers the entire spectrum of construction work, from earthworks and concreting to specialized installation work, and allows the use of structured information from construction work descriptions in Pipelines and Workflows, where specialists can search for information about work through tables (XLSX, CSV, PARQUET) or using LLM to communicate with this database in plain language or short queries.
 
 <p align="center">
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20Resource-based%20Work%20Cost%20Norms.jpg" alt="OpenConstructionEstimate" width="1000">
@@ -55,9 +56,9 @@ Star DDC workflow on GitHub and be instantly notified of new releases.
 
 ### Historical Context
 
-The methodology of resource-based standardization of construction work has been continuously developing and improving since the 1920s - from the first production norms to modern digital reference books. Over a century, the system has evolved from manual calculations to machine-readable databases while preserving the fundamental principle: accurate recording of physical resources per unit of construction output.
+The database of construction work descriptions is based on the methodology of standardization of construction work. The methodology for standardizing construction work based on resources ranges from the first production standards to modern digital reference books. The methodology has been continuously developed and improved since the 1920s in different parts of the world and has undergone particular development in the Eurasian region. Over the course of a century, the system has evolved from manual calculations to machine-readable databases, while retaining its fundamental principle: accurate recording of physical resources per unit of construction output. Modern versions integrate historical data with current market prices. 
 
-The modern version integrates historical data with current market prices. In local markets, similar systems are adapted and known under national codes: ENIR, GESN, FER, NRR, ESN, AzDTN, ShNQK, MKS ChT, SNT, BNbD, Dinh Muc, Ding'e.
+In local markets, similar systems are adapted and known under national codes: ENIR, GESN, FER, NRR, ESN, AzDTN, ShNQK, MKS ChT, SNT, BNbD, Dinh Muc, Ding'e.
 
 <p align="center">
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20SPREAD%20OF%20METHODOLOGY%20FROM%20THE%201920s.jpg" alt="OpenConstructionEstimate" width="1000">

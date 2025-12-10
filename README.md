@@ -44,44 +44,7 @@ The DDC CWICR database (Construction Work Items, Components & Resources) is an a
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20Resource-based%20Work%20Cost%20Norms.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
-```mermaid
-flowchart TB
-    subgraph Source["📦 Data Source"]
-        CWICR[(DDC CWICR<br/>────────────<br/>55,719 Work Items<br/>27,672 Resources<br/>85 Fields per Record)]
-    end
 
-    subgraph Processing["⚙️ Processing Pipeline"]
-        direction LR
-        ETL[["🔄 ETL<br/>Extraction &<br/>Transformation"]]
-        TRANS[["🌐 Translation<br/>9 Languages"]]
-        EMBED[["🧠 Vectorization<br/>OpenAI 3072d"]]
-        ETL --> TRANS --> EMBED
-    end
-
-    subgraph Outputs["📤 Output Formats"]
-        XLSX[("📊 Excel<br/>.xlsx")]
-        PARQUET[("⚡ Parquet<br/>.parquet")]
-        CSV[("📄 CSV<br/>.csv")]
-        QDRANT[("🔍 Qdrant<br/>.snapshot")]
-    end
-
-    subgraph Apps["🎯 Applications"]
-        SEARCH["🔎 Semantic<br/>Search"]
-        BIM["🏗️ BIM 5D<br/>Integration"]
-        RAG["🤖 RAG<br/>Systems"]
-        BI["📈 BI<br/>Analytics"]
-    end
-
-    Source --> Processing
-    Processing --> XLSX & PARQUET & CSV & QDRANT
-    XLSX & PARQUET & CSV --> BI & BIM
-    QDRANT --> SEARCH & RAG & BIM
-
-    style Source fill:#dbeafe,stroke:#2563eb,stroke-width:2px
-    style Processing fill:#fef3c7,stroke:#d97706,stroke-width:2px
-    style Outputs fill:#d1fae5,stroke:#059669,stroke-width:2px
-    style Apps fill:#fce7f3,stroke:#db2777,stroke-width:2px
-```
 
 ### Historical Context
 
@@ -170,6 +133,45 @@ erDiagram
 **Aggregates** - `total_cost_per_position`, `total_material_cost_per_position`, `total_resource_cost_per_position`, `total_value_abstract_resources`, `materials_resource_cost_eur`
 
 **Mass & Services** - `mass_name`, `mass_value`, `mass_unit`, `service_category`, `service_type`, `parameter_service_code`, `parameter_service_unit`, `parameter_service_name`, `parameter_service_quantity`, `service_cost_sum`
+
+```mermaid
+flowchart TB
+    subgraph Source["📦 Data Source"]
+        CWICR[(DDC CWICR<br/>────────────<br/>55,719 Work Items<br/>27,672 Resources<br/>85 Fields per Record)]
+    end
+
+    subgraph Processing["⚙️ Processing Pipeline"]
+        direction LR
+        ETL[["🔄 ETL<br/>Extraction &<br/>Transformation"]]
+        TRANS[["🌐 Translation<br/>9 Languages"]]
+        EMBED[["🧠 Vectorization<br/>OpenAI 3072d"]]
+        ETL --> TRANS --> EMBED
+    end
+
+    subgraph Outputs["📤 Output Formats"]
+        XLSX[("📊 Excel<br/>.xlsx")]
+        PARQUET[("⚡ Parquet<br/>.parquet")]
+        CSV[("📄 CSV<br/>.csv")]
+        QDRANT[("🔍 Qdrant<br/>.snapshot")]
+    end
+
+    subgraph Apps["🎯 Applications"]
+        SEARCH["🔎 Semantic<br/>Search"]
+        BIM["🏗️ BIM 5D<br/>Integration"]
+        RAG["🤖 RAG<br/>Systems"]
+        BI["📈 BI<br/>Analytics"]
+    end
+
+    Source --> Processing
+    Processing --> XLSX & PARQUET & CSV & QDRANT
+    XLSX & PARQUET & CSV --> BI & BIM
+    QDRANT --> SEARCH & RAG & BIM
+
+    style Source fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Processing fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style Outputs fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Apps fill:#fce7f3,stroke:#db2777,stroke-width:2px
+```
 
 ## Methodology
 

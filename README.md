@@ -44,6 +44,13 @@ The DDC CWICR database (Construction Work Items, Components & Resources) is an a
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20Resource-based%20Work%20Cost%20Norms.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
+⭐ <b>If you want to see new updates and database versions and if you find our tools useful and would like to see more similar applications for the construction industry, please give our repositories a star.</b>
+Star DDC workflow on GitHub and be instantly notified of new releases.
+<p align="center">
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/GitHub%20Star%20DDC.gif" width="100%"/>
+  <br></br>
+</p>
 
 
 ### Historical Context

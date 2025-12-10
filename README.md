@@ -284,51 +284,37 @@ flowchart LR
 CAD-BIM-to-Cost Estimation Pipeline
 Automated cost estimation from Revit/BIM models using AI-driven work decomposition and vector search against DDC CWICR pricing database.
 
-## Pipeline Flow
+### Pipeline Flow
 
 ```mermaid
 flowchart TB
     subgraph INPUT["📁 INPUT"]
-        ["🏠 CAD File<br/>"]
+        CAD["📐 CAD Project<br/>(RVT / IFC / DWG)"]
     end
 
     subgraph EXTRACT["⚙️ EXTRACTION"]
-        CONV["CadExporter.exe"]
+        CONV["RvtExporter.exe / CAD Export"]
         XLSX["📊 .XLSX<br/>(Raw Elements)"]
     end
 
     subgraph PREP["🔧 DATA PREPARATION"]
-        AI_HDR["🤖 AI: Analyze Headers<br/><i>sum/first/mean rules</i>"]
-        GROUP["Group by Type Name"]
-        AI_CAT["🤖 AI: Classify Categories<br/><i>building vs annotation</i>"]
+        PREP_AI["🤖 AI: Clean & Classify<br/><i>headers • types • categories</i>"]
     end
 
-    subgraph STAGE1["🏗️ STAGE 1: Project Detection"]
-        S1["🤖 Detect Project Type<br/><i>new/renovation/demolition</i><br/><i>small/medium/large</i>"]
-    end
-
-    subgraph STAGE2["📋 STAGE 2: Phase Planning"]
-        S2["🤖 Generate Construction Phases<br/><i>PREP→FOUND→FRAME→WALLS→MEP→FINISH</i>"]
-    end
-
-    subgraph STAGE3["🔗 STAGE 3: Assignment"]
-        S3["🤖 Assign Types to Phases<br/><i>element → phase mapping</i>"]
+    subgraph STAGE_PLAN["📋 STAGES 1–3: Planning"]
+        PLAN["🤖 Detect Project & Phases<br/><i>new / renovation / demolition</i><br/><i>small / medium / large</i><br/><i>elements → construction phases</i>"]
     end
 
     subgraph STAGE4["🔨 STAGE 4: Decomposition"]
-        LOOP1[["🔄 Loop: Each Type"]]
-        S4["🤖 Decompose Type to Works<br/><i>'Brick Wall 240mm' →</i><br/><i>1. Masonry work</i><br/><i>2. Mortar preparation</i><br/><i>3. Wall plastering</i>"]
+        S4["🤖 Decompose Types to Works<br/><i>'Brick Wall 240mm' → masonry, mortar, plaster</i>"]
     end
 
     subgraph STAGE5["💰 STAGE 5: Pricing"]
-        LOOP2[["🔄 Loop: Each Work"]]
-        S51["🔢 OpenAI Embeddings<br/><i>text-embedding-3-large</i><br/><i>3072 dimensions</i>"]
-        QDRANT[("🔍 Qdrant Vector DB<br/><b>DDC CWICR</b><br/><i>9 languages</i>")]
-        S52["📊 Parse Results<br/><i>rate_code, unit_cost</i><br/><i>resources, labor_hours</i>"]
+        S5["🤖 Price via Vector DB<br/><i>OpenAI embeddings + Qdrant</i><br/><i>rate_code, unit_cost, resources</i>"]
     end
 
     subgraph STAGE75["✅ STAGE 7.5: Validation"]
-        S75["🤖 CTO Review<br/><i>completeness check</i><br/><i>duplications</i><br/><i>missing works</i>"]
+        S75["🤖 CTO Review<br/><i>completeness • duplicates • missing works</i>"]
     end
 
     subgraph OUTPUT["📤 OUTPUT"]
@@ -336,24 +322,19 @@ flowchart TB
         XLS["📊 XLS Report"]
     end
 
-    RVT --> CONV --> XLSX
-    XLSX --> AI_HDR --> GROUP --> AI_CAT
-    AI_CAT --> S1 --> S2 --> S3
-    S3 --> LOOP1 --> S4
-    S4 --> LOOP2 --> S51 --> QDRANT --> S52
-    S52 --> S75
+    CAD --> CONV --> XLSX
+    XLSX --> PREP_AI --> PLAN --> S4 --> S5 --> S75
     S75 --> HTML & XLS
 
-    style INPUT fill:#e1f5fe
-    style EXTRACT fill:#fff3e0
-    style PREP fill:#f3e5f5
-    style STAGE1 fill:#e8f5e9
-    style STAGE2 fill:#e8f5e9
-    style STAGE3 fill:#e8f5e9
-    style STAGE4 fill:#fff8e1
-    style STAGE5 fill:#fce4ec
-    style STAGE75 fill:#e0f2f1
-    style OUTPUT fill:#e8eaf6
+    %% Modern, более нейтральные цвета
+    style INPUT fill:#f4f4f5,stroke:#d4d4d8,color:#18181b
+    style EXTRACT fill:#e0f2fe,stroke:#bae6fd,color:#0f172a
+    style PREP fill:#ede9fe,stroke:#ddd6fe,color:#1e1b4b
+    style STAGE_PLAN fill:#ecfdf5,stroke:#bbf7d0,color:#064e3b
+    style STAGE4 fill:#fef9c3,stroke:#fef3c7,color:#78350f
+    style STAGE5 fill:#fee2e2,stroke:#fecaca,color:#7f1d1d
+    style STAGE75 fill:#e0f2f1,stroke:#bae5e1,color:#134e4a
+    style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
 ```
 
     

@@ -40,6 +40,10 @@
 
 The DDC CWICR database (Construction Work Items, Components & Resources) is an attempt to harmonize standards, creating a seamless regulatory space for capital project management across multiple languages. The database covers the full spectrum of construction work: from earthworks and concrete to specialized installation operations.
 
+<p align="center">
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20Resource-based%20Work%20Cost%20Norms.jpg" alt="OpenConstructionEstimate" width="1000">
+</p>
+
 ```mermaid
 flowchart TB
     subgraph Source["📦 Data Source"]
@@ -84,6 +88,11 @@ flowchart TB
 The methodology of resource-based standardization of construction work has been continuously developing and improving since the 1920s — from the first production norms to modern digital reference books. Over a century, the system has evolved from manual calculations to machine-readable databases while preserving the fundamental principle: accurate recording of physical resources per unit of construction output.
 
 The modern version integrates historical data with current market prices. In local markets, similar systems are adapted and known under national codes: ENIR, GESN, FER, NRR, ESN, AzDTN, ShNQK, MKS ChT, SNT, BNbD, Dinh Muc, Ding'e.
+
+<p align="center">
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20SPREAD%20OF%20METHODOLOGY%20FROM%20THE%201920s.jpg" alt="OpenConstructionEstimate" width="1000">
+</p>
+
 
 ## Data Schema
 

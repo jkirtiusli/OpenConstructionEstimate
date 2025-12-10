@@ -419,18 +419,18 @@ Together we are changing the industry. You can send your solution to info@datadr
 
 **Code** (workflows, scripts) — [MIT](https://opensource.org/licenses/MIT). Free to use, modify, and distribute without restrictions.
 
-<p align="center">
+<p align="left">
   <br/>
   <b>Unlock the Power of Data in Construction</b><br/>
   <sub>Move to full-cycle data management where only unified structured data & processes remain</sub>
 </p>
 
-<p align="center">
+<p align="left">
   <a href="https://datadrivenconstruction.io">
     <img src="https://datadrivenconstruction.io/wp-content/uploads/2023/07/DataDrivenConstruction-1-1.png.webp" alt="DataDrivenConstruction" width="180">
   </a>
 </p>
 
-<p align="center">
+<p align="left">
   <sub>© 2025 Artem Boiko · <a href="https://datadrivenconstruction.io">datadrivenconstruction.io</a></sub>
 </p>

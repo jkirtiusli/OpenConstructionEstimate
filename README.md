@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
-<h3 align="center">DDC CWICR — Construction Work Items, Components & Resources</h3>
+<h3 align="center">DDC CWICR - Construction Work Items, Components & Resources</h3>
 
 <p align="center">
   <a href="#about">About</a> •
@@ -36,7 +36,7 @@
 
 ## About
 
-**DDC CWICR** (Construction Work Items, Components & Resources) is an open database for construction cost estimation, covering the full spectrum of construction work — from earthworks and concrete to specialized MEP operations. The modern construction industry in Eurasia and the Asia-Pacific region relies on a unified ecosystem of technical standardization that serves as a common engineering language for more than 10 dynamically developing economies.
+**DDC CWICR** (Construction Work Items, Components & Resources) is an open database for construction cost estimation, covering the full spectrum of construction work - from earthworks and concrete to specialized MEP operations. The modern construction industry in Eurasia and the Asia-Pacific region relies on a unified ecosystem of technical standardization that serves as a common engineering language for more than 10 dynamically developing economies.
 
 The DDC CWICR database (Construction Work Items, Components & Resources) is an attempt to harmonize standards, creating a seamless regulatory space for capital project management across multiple languages. The database covers the full spectrum of construction work: from earthworks and concrete to specialized installation operations.
 
@@ -85,7 +85,7 @@ flowchart TB
 
 ### Historical Context
 
-The methodology of resource-based standardization of construction work has been continuously developing and improving since the 1920s — from the first production norms to modern digital reference books. Over a century, the system has evolved from manual calculations to machine-readable databases while preserving the fundamental principle: accurate recording of physical resources per unit of construction output.
+The methodology of resource-based standardization of construction work has been continuously developing and improving since the 1920s - from the first production norms to modern digital reference books. Over a century, the system has evolved from manual calculations to machine-readable databases while preserving the fundamental principle: accurate recording of physical resources per unit of construction output.
 
 The modern version integrates historical data with current market prices. In local markets, similar systems are adapted and known under national codes: ENIR, GESN, FER, NRR, ESN, AzDTN, ShNQK, MKS ChT, SNT, BNbD, Dinh Muc, Ding'e.
 
@@ -155,21 +155,21 @@ erDiagram
 
 ### Field Groups
 
-**Classification** — `category_type`, `collection_code`, `collection_name`, `department_code`, `department_name`, `department_type`, `section_name`, `section_type`, `subsection_code`, `subsection_name`
+**Classification** - `category_type`, `collection_code`, `collection_name`, `department_code`, `department_name`, `department_type`, `section_name`, `section_type`, `subsection_code`, `subsection_name`
 
-**Work Item (Rate)** — `rate_code`, `rate_original_name`, `rate_final_name`, `rate_unit`, `row_type`, `is_scope`, `is_abstract`, `is_machine`, `is_labor`, `is_material`, `work_composition_text`
+**Work Item (Rate)** - `rate_code`, `rate_original_name`, `rate_final_name`, `rate_unit`, `row_type`, `is_scope`, `is_abstract`, `is_machine`, `is_labor`, `is_material`, `work_composition_text`
 
-**Resources** — `resource_code`, `resource_name`, `resource_unit`, `resource_quantity`, `parameter_resource_quantity`, `resource_price_per_unit_eur_current`, `resource_cost_eur`
+**Resources** - `resource_code`, `resource_name`, `resource_unit`, `resource_quantity`, `parameter_resource_quantity`, `resource_price_per_unit_eur_current`, `resource_cost_eur`
 
-**Labor** — `count_workers_per_unit`, `count_engineers_per_unit`, `count_machinists_per_unit`, `count_total_people_per_unit`, `labor_hours_construction_workers`, `labor_hours_machinists`, `labor_hours_engineers`, `total_labor_hours_workers_machinists`, `total_labor_hours_all_personnel`, `cost_of_working_hours`, `count_people_per_day`
+**Labor** - `count_workers_per_unit`, `count_engineers_per_unit`, `count_machinists_per_unit`, `count_total_people_per_unit`, `labor_hours_construction_workers`, `labor_hours_machinists`, `labor_hours_engineers`, `total_labor_hours_workers_machinists`, `total_labor_hours_all_personnel`, `cost_of_working_hours`, `count_people_per_day`
 
-**Machinery** — `machine_class2_name`, `machine_class3_name`, `personnel_machinist_code`, `personnel_machinist_grade`, `price_machinist_wages`, `price_relocation_included`, `price_cost_without_wages`, `electricity_consumption_kwh_per_machine_hour`, `electricity_cost_per_unit`, `electricity_cost_total_sum`, `cost_machinist_sum`, `total_value_machinery_equipment`
+**Machinery** - `machine_class2_name`, `machine_class3_name`, `personnel_machinist_code`, `personnel_machinist_grade`, `price_machinist_wages`, `price_relocation_included`, `price_cost_without_wages`, `electricity_consumption_kwh_per_machine_hour`, `electricity_cost_per_unit`, `electricity_cost_total_sum`, `cost_machinist_sum`, `total_value_machinery_equipment`
 
-**Price Variants** — `price_code_prefix`, `price_abstract_resource_common_start`, `price_abstract_resource_variable_parts`, `price_abstract_resource_position_count`, `price_abstract_resource_est_price_min`, `price_abstract_resource_est_price_max`, `price_abstract_resource_est_price_mean`, `price_abstract_resource_est_price_median`, `price_abstract_resource_unit`, `abstract_resource_tech_group`
+**Price Variants** - `price_code_prefix`, `price_abstract_resource_common_start`, `price_abstract_resource_variable_parts`, `price_abstract_resource_position_count`, `price_abstract_resource_est_price_min`, `price_abstract_resource_est_price_max`, `price_abstract_resource_est_price_mean`, `price_abstract_resource_est_price_median`, `price_abstract_resource_unit`, `abstract_resource_tech_group`
 
-**Aggregates** — `total_cost_per_position`, `total_material_cost_per_position`, `total_resource_cost_per_position`, `total_value_abstract_resources`, `materials_resource_cost_eur`
+**Aggregates** - `total_cost_per_position`, `total_material_cost_per_position`, `total_resource_cost_per_position`, `total_value_abstract_resources`, `materials_resource_cost_eur`
 
-**Mass & Services** — `mass_name`, `mass_value`, `mass_unit`, `service_category`, `service_type`, `parameter_service_code`, `parameter_service_unit`, `parameter_service_name`, `parameter_service_quantity`, `service_cost_sum`
+**Mass & Services** - `mass_name`, `mass_value`, `mass_unit`, `service_category`, `service_type`, `parameter_service_code`, `parameter_service_unit`, `parameter_service_name`, `parameter_service_quantity`, `service_cost_sum`
 
 ## Methodology
 
@@ -177,13 +177,13 @@ The key value of **Resource-Based Costing** is the separation of unchanging prod
 
 ```mermaid
 flowchart LR
-    subgraph Tech["📐 FIXED — Technology Norms"]
+    subgraph Tech["📐 FIXED - Technology Norms"]
         L["👷 Labor<br/>172 hrs/100m²"]
         M["🧱 Materials<br/>632 m²/100m²"]
         E["🚜 Equipment<br/>1.67 hrs/100m²"]
     end
     
-    subgraph Prices["💰 VARIABLE — Regional Prices"]
+    subgraph Prices["💰 VARIABLE - Regional Prices"]
         LP["€17.95/hr"]
         MP["€5.02/m²"]
         EP["€38.42/hr"]
@@ -202,10 +202,10 @@ flowchart LR
 
 **Why it matters:**
 
-- **Transparency** — Pricing without hidden markups, full resource breakdown
-- **Auditability** — Deep-dive capability for investment analysis and verification
-- **Portability** — Region-independent norms applicable across markets
-- **Proven** — Industry standard methodology established over 100+ years
+- **Transparency** - Pricing without hidden markups, full resource breakdown
+- **Auditability** - Deep-dive capability for investment analysis and verification
+- **Portability** - Region-independent norms applicable across markets
+- **Proven** - Industry standard methodology established over 100+ years
 
 ## Available Formats
 
@@ -220,7 +220,7 @@ flowchart LR
 
 Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Releases](https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases).
 
-### v0.1.0 — First Public Release
+### v0.1.0 - First Public Release
 
 | Language | Region | CSV Files | Qdrant Snapshot |
 |----------|--------|-----------|-----------------|
@@ -288,7 +288,7 @@ curl -X POST "http://localhost:6333/collections/ddc_cwicr_en/snapshots/upload" \
 
 ## Quick Start
 
-### Python — Tabular Data
+### Python - Tabular Data
 
 ```python
 import pandas as pd
@@ -303,7 +303,7 @@ print(f"Records: {len(df):,} | Fields: {len(df.columns)}")
 print(df[['rate_code', 'rate_original_name', 'rate_unit', 'total_cost_per_position']].head())
 ```
 
-### Python — Semantic Search
+### Python - Semantic Search
 
 ```python
 from qdrant_client import QdrantClient
@@ -380,11 +380,11 @@ flowchart LR
 
 ### Use Cases
 
-**Entry Level** — Cost Benchmarking, Price Indexation, Tender Estimation
+**Entry Level** - Cost Benchmarking, Price Indexation, Tender Estimation
 
-**Intermediate** — Localization, ETL/BI Pipelines, CO₂ Calculation
+**Intermediate** - Localization, ETL/BI Pipelines, CO₂ Calculation
 
-**Advanced** — AI/ML Training, CAD (BIM) 5D, Deep-Dive Investment Audit
+**Advanced** - AI/ML Training, CAD (BIM) 5D, Deep-Dive Investment Audit
 
 ### n8n Workflows
 
@@ -417,16 +417,16 @@ If you would like to test this solution with your own data or are interested in 
 
 DDC CWICR is a free and open project dedicated to making the construction industry more efficient, transparent, and technologically advanced. We are actively looking for like-minded enthusiasts who share this mission. If you create useful solutions and are ready to share them with the community, we are here to help you be heard.
 
-We invite you to submit your open source workflows, pipelines, and integrations based on DDC CWICR—tools that anyone can freely use in their work. The top solutions will be published with full author attribution on GitHub and announced through our newsletter and social media channels, reaching tens of thousands of professional subscribers. This places your name directly in front of an international community of estimators, BIM specialists, and project managers.
+We invite you to submit your open source workflows, pipelines, and integrations based on DDC CWICR-tools that anyone can freely use in their work. The top solutions will be published with full author attribution on GitHub and announced through our newsletter and social media channels, reaching tens of thousands of professional subscribers. This places your name directly in front of an international community of estimators, BIM specialists, and project managers.
 
 Together we are changing the industry. You can send your solution to info@datadrivenconstruction.io with the subject "DDC Open Workflow" or submit a Pull Request directly to our GitHub repositories.
 
 
 ## License
 
-**Database** (DDC CWICR) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free to use, share, and adapt commercially. Attribution: "DDC CWICR by DataDrivenConstruction"
+**Database** (DDC CWICR) - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free to use, share, and adapt commercially. Attribution: "DDC CWICR by DataDrivenConstruction"
 
-**Code** (workflows, scripts) — [MIT](https://opensource.org/licenses/MIT). Free to use, modify, and distribute without restrictions.
+**Code** (workflows, scripts) - [MIT](https://opensource.org/licenses/MIT). Free to use, modify, and distribute without restrictions.
 
 <p align="left">
   <br/>

@@ -239,27 +239,6 @@ flowchart LR
 | **CSV** | `.csv` | ~1.3 GB | Database import, legacy systems | Universal compatibility |
 | **Qdrant** | `.snapshot` | ~1 GB | Semantic search, RAG, AI assistants | Pre-computed OpenAI embeddings (3072d) |
 
-## Releases
-
-Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Releases](https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases).
-
-### v0.1.0 - First Public Release
-
-| Language | Region | CSV Files | Qdrant Snapshot |
-|----------|--------|-----------|-----------------|
-| 🇸🇦 Arabic | Dubai | `AR_DUBAI_*.csv` | `AR_DUBAI_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇨🇳 Chinese | Shanghai | `ZH_SHANGHAI_*.csv` | `ZH_SHANGHAI_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇩🇪 German | Berlin | `DE_BERLIN_*.csv` | `DE_BERLIN_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇬🇧 English | Toronto | `EN_TORONTO_*.csv` | `EN_TORONTO_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇪🇸 Spanish | Barcelona | `ES_BARCELONA_*.csv` | `ES_BARCELONA_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇫🇷 French | Paris | `FR_PARIS_*.csv` | `FR_PARIS_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇮🇳 Hindi | Mumbai | `HI_MUMBAI_*.csv` | `HI_MUMBAI_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇧🇷 Portuguese | São Paulo | `PT_SAOPAULO_*.csv` | `PT_SAOPAULO_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇷🇺 Russian | St. Petersburg | `RU_SPB_*.csv` | `RU_SPB_*_EMBEDDINGS_3072_DDC.snapshot` |
-
-<a href="https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases/tag/v0.1.0">
-  <img src="https://img.shields.io/badge/📥_Download_v0.1.0-GitHub_Releases-181717?style=for-the-badge&logo=github" alt="Download v0.1.0">
-</a>
 
 
 ## Integration
@@ -277,7 +256,7 @@ Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Rel
 CAD-BIM-to-Cost Estimation Pipeline
 Automated cost estimation from Revit/BIM models using AI-driven work decomposition and vector search against DDC CWICR pricing database.
 
-### Pipeline Flow
+** Pipeline Flow**
 
 ```mermaid
 flowchart TB
@@ -367,6 +346,25 @@ These Qdrant collections can be connected to application via modern automation a
 
 If you would like to learn more about vector databases, their practical use in construction, and how to build Workflows and Pipelines on top of them, please star this repository and subscribe to our updates.
 
+### Releases
+
+Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Releases](https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases).
+
+| Language | Region | CSV Files | Qdrant Snapshot |
+|----------|--------|-----------|-----------------|
+| 🇸🇦 Arabic | Dubai | `AR_DUBAI_*.csv` | `AR_DUBAI_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇨🇳 Chinese | Shanghai | `ZH_SHANGHAI_*.csv` | `ZH_SHANGHAI_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇩🇪 German | Berlin | `DE_BERLIN_*.csv` | `DE_BERLIN_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇬🇧 English | Toronto | `EN_TORONTO_*.csv` | `EN_TORONTO_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇪🇸 Spanish | Barcelona | `ES_BARCELONA_*.csv` | `ES_BARCELONA_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇫🇷 French | Paris | `FR_PARIS_*.csv` | `FR_PARIS_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇮🇳 Hindi | Mumbai | `HI_MUMBAI_*.csv` | `HI_MUMBAI_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇧🇷 Portuguese | São Paulo | `PT_SAOPAULO_*.csv` | `PT_SAOPAULO_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇷🇺 Russian | St. Petersburg | `RU_SPB_*.csv` | `RU_SPB_*_EMBEDDINGS_3072_DDC.snapshot` |
+
+<a href="https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases/tag/v0.1.0">
+  <img src="https://img.shields.io/badge/📥_Download_v0.1.0-GitHub_Releases-181717?style=for-the-badge&logo=github" alt="Download v0.1.0">
+</a>
 
 ### Collections
 

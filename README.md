@@ -262,7 +262,7 @@ flowchart TB
 ### n8n Workflows
 
 Text-Photo-CAD-BIM-to-Cost Estimation Pipeline
-Automatic cost estimation based on Revit/IFC/DWG models or simply using a description or photograph of the scope allows the use of modern pipeline and workflow tools (n8n, dify, or sim ai) to apply artificial intelligence and vector search in the DDC CWICR price database to compile complete estimates and a technological description of the project.
+Automatic cost estimation based on Revit/IFC/DWG models or simply using a description or photo from construction site allows the use of modern pipeline and workflow tools (n8n, dify, or sim ai) to apply artificial intelligence and vector search in the DDC CWICR price database to compile complete estimates and a technological description of the project.
 
 **Pipeline Flow**
 

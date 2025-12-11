@@ -194,6 +194,16 @@ flowchart LR
 ## Methodology
 
 The key value of **Resource-Based Costing** is the separation of unchanging production technology from the volatile financial component. It is based on the physical "first principles" of construction:
+- Labor hours required for specific work
+- Material quantities per unit of work  
+- Equipment time needed
+  
+**Why it matters:**
+
+- **Transparency** - Pricing without hidden markups, full resource breakdown
+- **Auditability** - Deep-dive capability for investment analysis and verification
+- **Portability** - Region-independent norms applicable across markets
+- **Proven** - Industry standard methodology established over 100+ years
 
 ```mermaid
 flowchart TB
@@ -235,12 +245,6 @@ flowchart TB
 ```
 
 
-**Why it matters:**
-
-- **Transparency** - Pricing without hidden markups, full resource breakdown
-- **Auditability** - Deep-dive capability for investment analysis and verification
-- **Portability** - Region-independent norms applicable across markets
-- **Proven** - Industry standard methodology established over 100+ years
 
 
 
@@ -249,17 +253,16 @@ flowchart TB
 
 ### Use Cases
 
-**Entry Level** - Cost Benchmarking, Price Indexation, Tender Estimation
-
-**Intermediate** - Localization, ETL/BI Pipelines, CO₂ Calculation
-
-**Advanced** - AI/ML Training, CAD (BIM) 5D, Deep-Dive Investment Audit
+- **Entry Level** - Cost Benchmarking, Price Indexation, Tender Estimation
+  
+- **Intermediate** - Localization, ETL/BI Pipelines, CO₂ Calculation
+  
+- **Advanced** - AI/ML Training, CAD (BIM) 5D, Deep-Dive Investment Audit
 
 ### n8n Workflows
 
 Text-Photo-CAD-BIM-to-Cost Estimation Pipeline
-Automatic cost estimation based on Revit/IFC/DWG models or simply using a description or photo of the volume, using artificial intelligence to break down the work and perform a vector search of the DDC CWICR price database.
-
+Automatic cost estimation based on Revit/IFC/DWG models or simply using a description or photograph of the scope allows the use of modern pipeline and workflow tools (n8n, dify, or sim ai) to apply artificial intelligence and vector search in the DDC CWICR price database to compile complete estimates and a technological description of the project.
 **Pipeline Flow**
 
 ```mermaid

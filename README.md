@@ -269,11 +269,11 @@ Automatic cost estimation based on Revit/IFC/DWG models or simply using a descri
 ```mermaid
 flowchart TB
     subgraph INPUT["📁 INPUT<br/><i>CAD • photos • text description</i>"]
-        CAD["📐 Project Input<br/>(RVT / IFC / DWG • photos • text)"]
+        CAD["📐 Project Input<br/>(text • photos • RVT / IFC / DWG)"]
     end
 
     subgraph EXTRACT["⚙️ EXTRACTION"]
-        CONV["RvtExporter.exe / CAD Export"]
+        CONV["RvtExporter.exe / CAD Export  / ETL"]
         XLSX["📊 .XLSX<br/>(Raw Elements)"]
     end
 

@@ -264,6 +264,113 @@ flowchart TB
 Text-Photo-CAD-BIM-to-Cost Estimation Pipeline
 Automatic cost estimation based on Revit/IFC/DWG models or simply using a description or photo from construction site allows the use of modern pipeline and workflow tools (n8n, dify, or sim ai) to apply artificial intelligence and vector search in the DDC CWICR price database to compile complete estimates and a technological description of the project.
 
+---
+
+# 🔧 n8n Pipeline Setup Guide
+
+## CAD (BIM) → Cost Estimation Pipeline with DDC CWICR
+
+Automated cost estimation workflow from Revit/BIM models using AI and vector search.
+
+  
+<p align="left">
+  <a href="https://datadrivenconstruction.io">
+    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20Estimates%20workflow2.jpg" alt="DataDrivenConstruction">
+  </a>
+</p>
+
+
+## 📋 Prerequisites
+
+| Component | Requirement |
+|-----------|-------------|
+| **n8n** | v1.0+ (self-hosted) |
+| **Qdrant** | Cloud or self-hosted instance |
+| **OpenAI API** | For embeddings (`text-embedding-3-large`) |
+| **LLM API** | OpenAI GPT-4o / Claude / Gemini / xAI Grok |
+| **DDC Converter** | `RvtExporter.exe` for Revit → Excel |
+
+---
+
+## 🚀 Quick Start
+
+### 1. Import Workflow
+
+```
+n8n → Settings → Import from File → Select JSON
+```
+
+### 2. Configure Credentials
+
+Create credentials in n8n for:
+
+| Credential | Required for |
+|------------|--------------|
+| `OpenAI API` | Embeddings + LLM (if using GPT-4o) |
+| `Qdrant API` | Vector database connection |
+
+### 3. Set Qdrant URL
+
+In the **"STAGE 5.1 - Vector Search"** node, configure:
+```
+URL: https://your-qdrant-instance.cloud.qdrant.io
+```
+
+### 4. Configure Input Parameters
+
+In the **"Setup - Define file paths"** node:
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `path_to_converter` | Path to RvtExporter.exe | `C:\DDC\RvtExporter.exe` |
+| `project_file` | Path to .rvt file | `C:\Projects\building.rvt` |
+| `group_by` | BIM grouping field | `Type Name` |
+| `language_code` | Output language | `DE`, `EN`, `RU`, etc. |
+
+---
+
+## 🌍 Supported Languages & Price Levels
+
+| Code | Language | Price Level | Currency |
+|------|----------|-------------|----------|
+| `AR` | Arabic | Dubai | AED |
+| `DE` | German | Berlin | EUR |
+| `EN` | English | Toronto | CAD |
+| `ES` | Spanish | Barcelona | EUR |
+| `FR` | French | Paris | EUR |
+| `HI` | Hindi | Mumbai | INR |
+| `PT` | Portuguese | São Paulo | BRL |
+| `RU` | Russian | St. Petersburg | RUB |
+| `ZH` | Chinese | Shanghai | CNY |
+
+---
+
+## 📊 Pipeline Stages
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  STAGE 0   │  Collect BIM data from Revit export           │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 1   │  AI detects project type (Residential/etc.)   │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 2   │  AI generates construction phases             │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 3   │  AI assigns element types to phases           │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 4   │  AI decomposes types into work items          │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 5   │  Vector search for pricing in DDC CWICR       │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 6   │  Map BIM units → Rate units                   │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 7   │  Calculate costs (Qty × Unit Price)           │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 8   │  Aggregate results by phases                  │
+├─────────────────────────────────────────────────────────────┤
+│  STAGE 9   │  Generate HTML + XLS reports                  │
+└─────────────────────────────────────────────────────────────┘
+```
+
 **Pipeline Flow**
 
 ```mermaid
@@ -316,13 +423,58 @@ flowchart TB
     style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
 ```
 
-    
-<p align="left">
-  <a href="https://datadrivenconstruction.io">
-    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20Estimates%20workflow2.jpg" alt="DataDrivenConstruction">
-  </a>
-</p>
+---
 
+## ⚙️ LLM Model Selection
+
+The workflow supports multiple AI providers. Enable your preferred model in the **LLM Models** section:
+
+| Model | Node Name | Status |
+|-------|-----------|--------|
+| OpenAI GPT-4o | `OpenAI LLM` | ✅ Default |
+| Claude Opus 4 | `Anthropic Chat Model2` | Disabled |
+| Gemini 2.5 Pro | `Google Gemini Chat Model` | Disabled |
+| xAI Grok | `xAI Grok Chat Model1` | Disabled |
+| DeepSeek | `DeepSeek Chat Model` | Disabled |
+
+To switch models: **Enable** the desired model node and **Disable** others.
+
+---
+
+## 📁 Output Files
+
+Reports are saved to the project folder:
+```
+project_YYYY-MM-DD.html   ← Interactive report (opens in browser)
+project_YYYY-MM-DD.xls    ← Excel-compatible spreadsheet
+```
+
+---
+
+## 🔗 Qdrant Collections
+
+The workflow automatically selects the correct collection based on `language_code`:
+
+```
+{LANG}_{CITY}_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR
+```
+
+Example: `DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR`
+
+---
+
+## ⚠️ Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| "No Excel file found" | Check `path_to_converter` and `project_file` paths |
+| "Qdrant connection failed" | Verify Qdrant URL and API key in credentials |
+| "Rate limit exceeded" | Reduce batch size or add delays between API calls |
+| "No pricing found" | Check if the correct language collection exists in Qdrant |
+
+
+
+  
 We are gradually expanding a library of ready-to-use n8n workflows for automated construction cost estimation:
 
 - **Image-based cost calculation**  

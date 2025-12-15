@@ -246,7 +246,7 @@ flowchart TB
 
 
 
-
+---
 
 
 ## Integration
@@ -327,7 +327,7 @@ In the **"Setup - Define file paths"** node:
 | `group_by` | BIM grouping field | `Type Name` |
 | `language_code` | Output language | `DE`, `EN`, `RU`, etc. |
 
----
+
 
 ## 🌍 Supported Languages & Price Levels
 
@@ -343,11 +343,10 @@ In the **"Setup - Define file paths"** node:
 | `RU` | Russian | St. Petersburg | RUB |
 | `ZH` | Chinese | Shanghai | CNY |
 
----
+
 
 ## 📊 Pipeline Stages
 
-```
 ┌─────────────────────────────────────────────────────────────┐
 │  STAGE 0   │  Collect BIM data from Revit export           │
 ├─────────────────────────────────────────────────────────────┤
@@ -423,7 +422,6 @@ flowchart TB
     style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
 ```
 
----
 
 ## ⚙️ LLM Model Selection
 
@@ -439,7 +437,6 @@ The workflow supports multiple AI providers. Enable your preferred model in the 
 
 To switch models: **Enable** the desired model node and **Disable** others.
 
----
 
 ## 📁 Output Files
 
@@ -449,7 +446,7 @@ project_YYYY-MM-DD.html   ← Interactive report (opens in browser)
 project_YYYY-MM-DD.xls    ← Excel-compatible spreadsheet
 ```
 
----
+
 
 ## 🔗 Qdrant Collections
 
@@ -461,7 +458,7 @@ The workflow automatically selects the correct collection based on `language_cod
 
 Example: `DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR`
 
----
+
 
 ## ⚠️ Troubleshooting
 
@@ -473,7 +470,7 @@ Example: `DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR`
 | "No pricing found" | Check if the correct language collection exists in Qdrant |
 
 
-
+---
   
 We are gradually expanding a library of ready-to-use n8n workflows for automated construction cost estimation:
 
@@ -495,6 +492,7 @@ Automate construction data processing with ready-made CAD-BIM n8n workflows:
   <img src="https://img.shields.io/badge/cad2data_Pipeline-GitHub-181717?style=for-the-badge&logo=github" alt="cad2data Pipeline">
 </a>
 
+---
 
 ## Vector Database
 
@@ -505,6 +503,8 @@ Vector databases allow you to “talk” to your data in natural language – us
 These Qdrant collections can be connected to application via modern automation and integration workflows (for example, low-code/no-code Workflow and Pipeline tools). You can build assistants that search, filter and explain construction work items, or integrate semantic search directly into your existing estimation and project-control tools.
 
 If you would like to learn more about vector databases, their practical use in construction, and how to build Workflows and Pipelines on top of them, please star this repository and subscribe to our updates.
+
+---
 
 ### Releases
 
@@ -565,6 +565,7 @@ curl -X POST "http://localhost:6333/collections/ddc_cwicr_en/snapshots/upload" \
 
 # Dashboard: http://localhost:6333/dashboard
 ```
+---
 
 ## Quick Start
 
@@ -636,7 +637,7 @@ results = client.search(
 ```
 
 
-
+---
 
 ## Resources & Community
 

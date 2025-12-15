@@ -319,7 +319,7 @@ flowchart TB
     
 <p align="left">
   <a href="https://datadrivenconstruction.io">
-    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20Estimates%20workflow.jpg" alt="DataDrivenConstruction">
+    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20Estimates%20workflow2.jpg" alt="DataDrivenConstruction">
   </a>
 </p>
 

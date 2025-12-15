@@ -1883,7 +1883,7 @@
         "mode": "load",
         "qdrantCollection": {
           "__rl": true,
-          "value": "={{ $json.qdrant_collection || 'EN_TORONTO_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR' }}",
+          "value": "={{ $json.qdrant_collection || 'ENG_TORONTO_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR' }}",
           "mode": "id"
         },
         "prompt": "={{ $json.search_query || $json.work_name || 'construction work' }}",
@@ -1909,7 +1909,7 @@
     },
     {
       "parameters": {
-        "content": "### To enable vector database search, you need to:\n\n- Install the open-source Qdrant instance on your local machine or a VPS.\n- Fill in the Qdrant credentials in your workflow.\n- Upload the required dataset into Qdrant — either one dataset or all of them (9 total).\n- Choose any collection you want to search. The exact collection names are listed in the GitHub repository",
+        "content": "### 📥 To enable vector database search, you need to:\n\n- Install the open-source Qdrant instance on your local machine or a VPS.\n- Fill in the Qdrant credentials in your workflow.\n- Upload the required dataset into Qdrant — either one dataset or all of them (9 total).\n- Choose any collection you want to search. The exact collection names are listed in the GitHub repository",
         "height": 256,
         "width": 368,
         "color": 3
@@ -2741,7 +2741,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "1996fb0d-c2bf-46f1-86be-320719b28574",
+  "versionId": "20a6b0f4-de98-44a3-8aac-720f0e30e14e",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "faa70e11b7175129a74fd834d3451fdc1862589b16d68ded03f91ca7b1ecca12"

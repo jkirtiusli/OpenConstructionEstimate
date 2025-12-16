@@ -343,27 +343,8 @@ In the **"STAGE 5.1 - Vector Search"** node, configure:
 URL: https://your-qdrant-instance.cloud.qdrant.io
 ```
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### ⚙️ LLM Model Selection
-The workflow supports multiple AI providers. Enable your preferred model in the **LLM Models** section:
-
-| Model | Node Name | Status |
-|-------|-----------|--------|
-| OpenAI GPT-4o | `OpenAI LLM` | ✅ Default |
-| Claude Opus 4 | `Anthropic Chat Model2` | Disabled |
-| Gemini 2.5 Pro | `Google Gemini Chat Model` | Disabled |
-| xAI Grok | `xAI Grok Chat Model1` | Disabled |
-| DeepSeek | `DeepSeek Chat Model` | Disabled |
-
-To switch models: **Enable** the desired model node and **Disable** others.
-
-</td>
-<td width="50%" valign="top">
-
 ### 4. Configure Input Parameters
+
 In the **"Setup - Define file paths"** node:
 
 | Parameter | Description | Example |
@@ -372,11 +353,6 @@ In the **"Setup - Define file paths"** node:
 | `project_file` | Path to .rvt file | `C:\Projects\building.rvt` |
 | `group_by` | BIM grouping field | `Type Name` |
 | `language_code` | Output language | `DE`, `EN`, `RU`, etc. |
-
-</td>
-</tr>
-</table>
-
 
 <p align="center">
   <br>

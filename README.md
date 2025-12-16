@@ -276,8 +276,19 @@ Automatic cost estimation based on Revit/IFC/DWG models or simply using a descri
 
 ## CAD (BIM) → Cost Estimation Pipeline with DDC CWICR
 
-Automated cost estimation workflow from Revit/BIM models using AI and vector search.
+Automated cost estimation workflow from Revit/BIM models using AI and vector search. 
+This example is fully functional and ready to use right now — no additional setup required beyond API keys. Run it, explore the outputs, and understand how each stage works.
 
+But this is just the beginning.
+
+**n8n provides 400+ native integrations** with platforms like Google Sheets, Notion, Slack, Airtable, databases (PostgreSQL, MongoDB), cloud storage, and more. Every node in this workflow is modular — you can:
+
+- 🔄 **Swap LLM providers** (OpenAI ↔ Claude ↔ Gemini ↔ Grok)
+- 📊 **Connect to your ERP or project management system**
+- 📁 **Export results to any destination** (cloud storage, email, dashboards)
+- 🔧 **Modify any stage** to match your estimation methodology
+
+The workflow is yours to adapt. No restrictions. No licensing fees. Full control.
   
 <p align="left">
   <a href="https://datadrivenconstruction.io">

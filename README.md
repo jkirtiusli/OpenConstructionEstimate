@@ -303,7 +303,7 @@ The workflow is yours to adapt. No restrictions. No licensing fees. Full control
 
 <p align="left">
   <a href="https://datadrivenconstruction.io">
-    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20Estimates%20workflow2.jpg" alt="DataDrivenConstruction">
+    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/CAD%20(Revit)%20to%205D-4D%20Cost%20and%20Time%20Estimate.jpg" alt="DataDrivenConstruction">
   </a>
 </p>
 
@@ -355,7 +355,11 @@ In the **"Setup - Define file paths"** node:
 | `group_by` | BIM grouping field | `Type Name` |
 | `language_code` | Output language | `DE`, `EN`, `RU`, etc. |
 
-
+<p align="center">
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/AI%20makes%20it%20possible%20%20%20%20to%20automate%20%20the%20work%20of%20data%20processing%20specialists.jpg" width="100%"/>
+  <br></br>
+</p>
 
 ## 🌍 Supported Languages & Price Levels
 
@@ -473,7 +477,11 @@ Reports are saved to the project folder:
 project_YYYY-MM-DD.html   ← Interactive report (opens in browser)
 project_YYYY-MM-DD.xls    ← Excel-compatible spreadsheet
 ```
-
+<p align="center">
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/The%20generated%20report%20includes.jpg" width="100%"/>
+  <br></br>
+</p
 
 
 ## 🔗 Qdrant Collections

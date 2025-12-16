@@ -303,7 +303,7 @@ Automated cost estimation workflow from Revit/BIM models using AI and vector sea
 ### 1. Import Workflow
 
 ```
-n8n → Settings → Import from File → Select JSON
+n8n → New workflow → Import from File → Select JSON
 ```
 
 ### 2. Configure Credentials

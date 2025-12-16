@@ -310,14 +310,13 @@ The workflow is yours to adapt. No restrictions. No licensing fees. Full control
 
 ## 📋 Prerequisites
 
-| Component | Requirement |
-|-----------|-------------|
-| **n8n** | v1.0+ (self-hosted) |
-| **Qdrant** | Cloud or self-hosted instance |
-| **OpenAI API** | For embeddings (`text-embedding-3-large`) |
-| **LLM API** | OpenAI GPT-4o / Claude / Gemini / xAI Grok |
-| **DDC Converter** | `RvtExporter.exe` for Revit → Excel |
-
+| Component | Requirement | Description |
+|-----------|-------------|-------------|
+| **[n8n](https://n8n.io/)** | v1.0+ (self-hosted) | Workflow automation platform for orchestrating the estimation pipeline |
+| **[Qdrant](https://qdrant.tech/)** | Cloud or self-hosted instance | Vector database for semantic search across construction work items |
+| **[OpenAI API](https://platform.openai.com/)** | For embeddings (`text-embedding-3-large`) | Generates vector embeddings for BIM elements and cost database matching |
+| **LLM API** | [OpenAI GPT-4o](https://platform.openai.com/) / [Claude](https://www.anthropic.com/) / [Gemini](https://ai.google.dev/) / [xAI Grok](https://x.ai/) | AI models for work item classification and estimate generation |
+| **[DDC Converter](https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto)** | `RvtExporter.exe` | Extracts BIM data from Revit models to Excel/JSON for processing |
 ---
 
 ## 🚀 Quick Start

@@ -34,6 +34,14 @@
   </a>
 </p>
 
+<p align="center">
+  <br>DataDrivenConstruction clients and users
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/Clients_DataDrivenConstruction_logos.png" width="80%"/>
+  <br></br>
+</p>
+
+
 ## About
 
 **DDC CWICR** (Construction Work Items, Components & Resources) is an open database for construction cost estimation, covering the full spectrum of construction activities - from earthworks and concrete placement to specialized installation work.

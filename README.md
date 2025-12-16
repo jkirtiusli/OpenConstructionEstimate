@@ -289,7 +289,8 @@ But this is just the beginning.
 - 🔧 **Modify any stage** to match your estimation methodology
 
 The workflow is yours to adapt. No restrictions. No licensing fees. Full control.
-  
+**Have improvements?** PRs are welcome. Let's build the future of construction estimation together.
+
 <p align="left">
   <a href="https://datadrivenconstruction.io">
     <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20Estimates%20workflow2.jpg" alt="DataDrivenConstruction">

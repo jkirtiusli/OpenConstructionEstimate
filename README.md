@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate.jpg" alt="OpenConstructionEstimate" width="1000">
-</p>
 <h3 align="center">DDC CWICR - Construction Work Items, Components & Resources (+ n8n Etimate Workflow)</h3>
 
 <p align="center">
@@ -32,6 +29,10 @@
   <a href="https://openconstructionestimate.com">
     <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
   </a>
+</p>
+
+<p align="center">
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
 <p align="center">

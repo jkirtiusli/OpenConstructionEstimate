@@ -28,7 +28,7 @@
     {
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "{\n  \"bot_token\": \"7990641026:AAHq09TaJG8EGBfqPalNWOFz2QNmawWZ8tE\",\n  \"AI_PROVIDER\": \"gemini\",\n  \"GEMINI_API_KEY\": \"AIzaSyD_bzlSFXMmDn3O1uaU2gxb-OMEatqYXE0\",\n  \"OPENAI_API_KEY\": \"YOUR_OPENAI_API_KEY_HERE\"\n}",
+        "jsonOutput": "{\n  \"bot_token\": \"TELEGRAM_API\",\n  \"AI_PROVIDER\": \"gemini\",\n  \"GEMINI_API_KEY\": \"YOUR_GEMINI_API\",\n  \"OPENAI_API_KEY\": \"YOUR_OPENAI_API_KEY_HERE\"\n}",
         "options": {}
       },
       "id": "7c4d5ddb-190e-48f3-8018-7455e9541886",

@@ -1,4 +1,4 @@
-<h3 align="center">DDC CWICR - Construction Work Items, Components & Resources 
+<h3 align="center">DDC CWICR - Construction Work Items, Components & Resources </br>
   + Pipeline n8n for calculating estimates based on descriptions, photos, and CAD (BIM) projects</h3>
 
 <p align="center">

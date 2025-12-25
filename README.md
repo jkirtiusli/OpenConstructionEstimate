@@ -37,10 +37,6 @@
   </a>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/DDC_CWICR-Powered-black?style=for-the-badge&labelColor=000000" alt="DDC CWICR"/>
-</p>
-
 <h1 align="center">⚡ n8n Workflows</h1>
 <p align="center"><code>Choose your input → Get cost estimate</code></p>
 
@@ -96,15 +92,6 @@
 </table>
 
 <br>
-<p align="center"><sub>Powered by <b>DDC CWICR</b> Database</sub></p>
-
-
-<p align="center"><sub>Powered by <b>DDC CWICR</b></sub></p>
-<br>
-
-<p align="center">
-  <sub>Powered by DDC CWICR Database</sub>
-</p>
 
 <p align="center">
  DataDrivenConstruction clients and users

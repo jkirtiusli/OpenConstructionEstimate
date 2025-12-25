@@ -31,11 +31,7 @@
 <p align="center">
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate_bottom.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
-<p align="center">
-  <a href="https://openconstructionestimate.com">
-    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
-  </a>
-</p>
+
 
 <h1 align="center">⚡ n8n Workflows</h1>
 <p align="center"><code>Choose your input → Get cost estimate</code></p>
@@ -92,7 +88,12 @@
 </table>
 
 <br>
-
+<p align="center">
+  <a href="https://openconstructionestimate.com">
+    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
+<br>
 <p align="center">
  DataDrivenConstruction clients and users
   <br>

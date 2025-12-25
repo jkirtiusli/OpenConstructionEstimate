@@ -33,7 +33,7 @@
 </p>
 
 
-<h1 align="center">⚡ n8n Workflows</h1>
+<h2 align="center">⚡ n8n Workflows</h2>
 <p align="center"><code>Choose your input → Get cost estimate</code></p>
 
 <br>

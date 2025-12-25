@@ -46,26 +46,58 @@
 
 <br>
 
-<table>
+<table width="100%">
 <tr>
-<td align="center" width="33%">
-<h3>📝 Text</h3>
-<sub>Telegram / chat message</sub><br><br>
-<a href="./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json"><img src="https://img.shields.io/badge/⬇_Download-000?style=flat-square" alt="Download"/></a>
+
+<td align="center" valign="top">
+<br>
+<h2>📝 Text</h2>
+<p>Quick scope-to-estimate<br>from a short description</p>
+<p><b>Input:</b> Telegram / chat message<br>
+<b>Output:</b> Matched work items + estimate</p>
+<br>
+<a href="./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json">
+<img src="https://img.shields.io/badge/Download_Workflow-0A84FF?style=for-the-badge&logo=download&logoColor=white" alt="Download"/>
+</a>
+<br><br>
 </td>
-<td align="center" width="33%">
-<h3>📷 Photo / PDF</h3>
-<sub>Site photos, scanned BOQ</sub><br><br>
-<a href="./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json"><img src="https://img.shields.io/badge/⬇_Photo-000?style=flat-square" alt="Photo"/></a>
-<a href="./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json"><img src="https://img.shields.io/badge/⬇_Bot-000?style=flat-square" alt="Bot"/></a>
+
+<td align="center" valign="top">
+<br>
+<h2>📷 Photo / PDF</h2>
+<p>Site photos, scanned BOQ,<br>photo-PDF from the field</p>
+<p><b>Input:</b> Image or PDF pages<br>
+<b>Output:</b> Extracted scope → estimate</p>
+<br>
+<a href="./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json">
+<img src="https://img.shields.io/badge/Photo_Workflow-0A84FF?style=for-the-badge&logo=download&logoColor=white" alt="Photo"/>
+</a>
+&nbsp;
+<a href="./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json">
+<img src="https://img.shields.io/badge/Telegram_Bot-0A84FF?style=for-the-badge&logo=telegram&logoColor=white" alt="Bot"/>
+</a>
+<br><br>
 </td>
-<td align="center" width="33%">
-<h3>🏗️ CAD / BIM</h3>
-<sub>Revit, IFC, DWG → 4D/5D</sub><br><br>
-<a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json"><img src="https://img.shields.io/badge/⬇_Download-000?style=flat-square" alt="Download"/></a>
+
+<td align="center" valign="top">
+<br>
+<h2>🏗️ CAD / BIM</h2>
+<p>Revit / IFC / DWG-based<br>quantification & estimating</p>
+<p><b>Input:</b> Model export / element table<br>
+<b>Output:</b> 4D/5D estimate + breakdown</p>
+<br>
+<a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json">
+<img src="https://img.shields.io/badge/Download_Workflow-0A84FF?style=for-the-badge&logo=download&logoColor=white" alt="Download"/>
+</a>
+<br><br>
 </td>
+
 </tr>
 </table>
+
+<br>
+<p align="center"><sub>Powered by <b>DDC CWICR</b> Database</sub></p>
+
 
 <p align="center"><sub>Powered by <b>DDC CWICR</b></sub></p>
 <br>

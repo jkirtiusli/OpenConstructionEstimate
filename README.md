@@ -37,6 +37,36 @@
   </a>
 </p>
 
+## n8n Workflows (choose your input)
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>1) Text → Cost Estimate</h3>
+      <p><b>Best for:</b> quick scope-to-estimate from a short description.</p>
+      <p><b>Input:</b> text message (Telegram / chat).</p>
+      <p><b>Output:</b> matched work items + summary estimate.</p>
+      <p><a href="./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json">Open / download workflow</a></p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>2) Photo / PDF → Cost Estimate</h3>
+      <p><b>Best for:</b> site photos, scanned BOQ pages, photo-PDF from the field.</p>
+      <p><b>Input:</b> image or PDF pages.</p>
+      <p><b>Output:</b> extracted scope → matched work items → estimate.</p>
+      <p>
+        <a href="./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json">Photo workflow</a><br/>
+        <a href="./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json">Telegram bot (Text + Photo + PDF)</a>
+      </p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>3) CAD / BIM → 4D / 5D Estimate</h3>
+      <p><b>Best for:</b> Revit/IFC/DWG-based quantification & structured estimating.</p>
+      <p><b>Input:</b> model export / element table.</p>
+      <p><b>Output:</b> 4D/5D estimate + breakdown by phases/packages.</p>
+      <p><a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json">Open / download workflow</a></p>
+    </td>
+  </tr>
+</table>
 
 <p align="center">
  DataDrivenConstruction clients and users

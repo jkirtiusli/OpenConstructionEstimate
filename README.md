@@ -75,7 +75,7 @@
 <br>
 <h2>🏗️ CAD / BIM</h2>
 <p>Revit / IFC / DWG-based<br>quantification & estimating</p>
-<p><b>Input:</b> Model export / element table<br>
+<p><b>Input:</b> Model export <br>
 <b>Output:</b> 4D/5D estimate + breakdown</p>
 <br>
 <a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json">

@@ -37,37 +37,92 @@
   </a>
 </p>
 
-## n8n Workflows (choose your input)
+<p align="center">
+  <img src="https://img.shields.io/badge/DDC_CWICR-Powered-black?style=for-the-badge&labelColor=000000" alt="DDC CWICR"/>
+</p>
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h3>1) Text → Cost Estimate</h3>
-      <p><b>Best for:</b> quick scope-to-estimate from a short description.</p>
-      <p><b>Input:</b> text message (Telegram / chat).</p>
-      <p><b>Output:</b> matched work items + summary estimate.</p>
-      <p><a href="./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json">Open / download workflow</a></p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>2) Photo / PDF → Cost Estimate</h3>
-      <p><b>Best for:</b> site photos, scanned BOQ pages, photo-PDF from the field.</p>
-      <p><b>Input:</b> image or PDF pages.</p>
-      <p><b>Output:</b> extracted scope → matched work items → estimate.</p>
-      <p>
-        <a href="./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json">Photo workflow</a><br/>
-        <a href="./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json">Telegram bot (Text + Photo + PDF)</a>
-      </p>
-      </br>
-    </td>
-    <td width="33%" valign="top">
-      <h3>3) CAD / BIM → 4D / 5D Estimate</h3>
-      <p><b>Best for:</b> Revit/IFC/DWG-based quantification & structured estimating.</p>
-      <p><b>Input:</b> model export / element table.</p>
-      <p><b>Output:</b> 4D/5D estimate + breakdown by phases/packages.</p>
-      <p><a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json">Open / download workflow</a></p>
-    </td>
-  </tr>
-</table>
+<h1 align="center">n8n Workflows</h1>
+
+<p align="center">
+  <strong>Choose your input type</strong>
+</p>
+
+<br>
+
+---
+
+<br>
+
+### 📝 &nbsp; Text → Cost Estimate
+
+> Quick scope-to-estimate from a short description
+
+| | |
+|:--|:--|
+| **Input** | Text message (Telegram / chat) |
+| **Output** | Matched work items + summary estimate |
+
+<p>
+  <a href="./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json">
+    <img src="https://img.shields.io/badge/Download_Workflow-007AFF?style=for-the-badge&logo=json&logoColor=white" alt="Download"/>
+  </a>
+</p>
+
+<br>
+
+---
+
+<br>
+
+### 📷 &nbsp; Photo / PDF → Cost Estimate
+
+> Site photos, scanned BOQ pages, photo-PDF from the field
+
+| | |
+|:--|:--|
+| **Input** | Image or PDF pages |
+| **Output** | Extracted scope → matched work items → estimate |
+
+<p>
+  <a href="./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json">
+    <img src="https://img.shields.io/badge/Photo_Workflow-FF2D55?style=for-the-badge&logo=json&logoColor=white" alt="Photo"/>
+  </a>
+  &nbsp;
+  <a href="./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json">
+    <img src="https://img.shields.io/badge/Telegram_Bot_(All--in--one)-5856D6?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
+  </a>
+</p>
+
+<br>
+
+---
+
+<br>
+
+### 🏗️ &nbsp; CAD / BIM → 4D / 5D Estimate
+
+> Revit / IFC / DWG-based quantification & structured estimating
+
+| | |
+|:--|:--|
+| **Input** | Model export / element table |
+| **Output** | 4D/5D estimate + breakdown by phases/packages |
+
+<p>
+  <a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json">
+    <img src="https://img.shields.io/badge/Download_Workflow-34C759?style=for-the-badge&logo=json&logoColor=white" alt="Download"/>
+  </a>
+</p>
+
+<br>
+
+---
+
+<br>
+
+<p align="center">
+  <sub>Powered by DDC CWICR Database</sub>
+</p>
 
 <p align="center">
  DataDrivenConstruction clients and users

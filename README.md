@@ -468,6 +468,12 @@ flowchart LR
 
 Web form interface for photo-based estimation. Upload a construction photo — AI Vision identifies elements, estimates dimensions, and calculates costs automatically.
 
+<p align="center">
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/n8n%20pipeline%20photo%20estimator.jpg" width="100%"/>
+  <br></br>
+</p>
+
 ```mermaid
 flowchart TB
     subgraph Upload["📷 PHOTO UPLOAD"]

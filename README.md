@@ -4,15 +4,6 @@
 <p align="center">
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
-<p align="center">
-  <a href="#about">About</a> •
-  <a href="#data-schema">Schema</a> •
-  <a href="#methodology">Methodology</a> •
-  <a href="#releases">Releases</a> •
-  <a href="#vector-database">Qdrant</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#integration">Integration</a>
-</p>
 
 <div align="center">
   <img src="https://img.shields.io/badge/Work_Items-55,719-2563eb?style=for-the-badge" alt="Work Items">
@@ -28,10 +19,56 @@
   <img src="https://img.shields.io/badge/Vector_DB-Qdrant-dc382d?style=flat-square" alt="Qdrant">
   <img src="https://img.shields.io/badge/Automation-n8n-ea4b71?style=flat-square" alt="n8n">
 </div>
+
 <p align="center">
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate_bottom.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
+---
+
+## 📑 Table of Contents
+
+### Database & Data
+- [About](#about) — What is DDC CWICR
+- [Available Formats](#available-formats) — Excel, Parquet, CSV, Qdrant
+- [Data Schema](#data-schema) — 85 fields structure
+- [Field Groups](#field-groups) — Classification, Resources, Labor, Machinery
+- [Methodology](#methodology) — Resource-based costing principles
+- [Historical Context](#historical-context) — 100+ years of standards
+
+### n8n Workflows
+- [n8n Workflows Overview](#-n8n-workflows) — Choose your input type
+- [Workflow 1: Text Estimator Bot](#1%EF%B8%8F⃣-text-estimator-bot) — Telegram bot for text input
+- [Workflow 2: Photo Cost Estimator](#2%EF%B8%8F⃣-photo-cost-estimator) — Web form with AI Vision
+- [Workflow 3: Universal Bot](#3%EF%B8%8F⃣-universal-estimator-bot-text--photo--pdf) — Text + Photo + PDF
+- [Workflow 4: CAD/BIM Pipeline](#4%EF%B8%8F⃣-cad-bim-cost-estimation-pipeline) — Revit/IFC/DWG to estimate
+- [Workflows Quick Start](#workflows-quick-start) — Setup in 4 steps
+
+### CAD/BIM Pipeline Details
+- [Prerequisites](#-prerequisites) — Required components
+- [Pipeline Stages](#-pipeline-stages) — 10-stage processing
+- [LLM Model Selection](#%EF%B8%8F-llm-model-selection) — OpenAI, Claude, Gemini, Grok
+- [Output Files](#-output-files) — HTML & Excel reports
+- [Troubleshooting](#%EF%B8%8F-troubleshooting) — Common issues
+
+### Vector Database
+- [Vector Database](#vector-database) — Semantic search with Qdrant
+- [Releases](#releases) — Download snapshots
+- [Collections](#collections) — 9 language collections
+- [Docker Deployment](#docker-deployment) — Self-hosted setup
+
+### Getting Started
+- [Quick Start - Python](#quick-start) — Tabular data & semantic search
+- [Integration Use Cases](#integration) — Entry to Advanced level
+
+### Community
+- [Resources & Community](#resources--community) — Links & channels
+- [Consulting & Training](#consulting--training) — Professional services
+- [Contributing](#contributing) — Submit your workflows
+- [License](#license) — CC BY 4.0 & MIT
+- [Support the Project](#support-the-project) — Sponsor & donate
+
+---
 
 <h2 align="center">⚡ n8n Workflows</h2>
 <p align="center"><code>Choose your input → Get cost estimate</code></p>
@@ -103,6 +140,7 @@
   <br></br>
 </p>
 
+---
 
 ## About
 
@@ -134,6 +172,7 @@ A live demo is available at [openconstructionestimate.com](https://openconstruct
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/DDC%20CWICR%20Resource-based%20Work%20Cost%20Norms.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
+---
 
 ## Data Schema
 
@@ -203,8 +242,6 @@ The 85 database fields are organized into logical groups that reflect the resour
   <br></br>
 </p>
 
-
-
 **Classification** - `category_type`, `collection_code`, `collection_name`, `department_code`, `department_name`, `department_type`, `section_name`, `section_type`, `subsection_code`, `subsection_name`
 
 **Work Item (Rate)** - `rate_code`, `rate_original_name`, `rate_final_name`, `rate_unit`, `row_type`, `is_scope`, `is_abstract`, `is_machine`, `is_labor`, `is_material`, `work_composition_text`
@@ -221,31 +258,16 @@ The 85 database fields are organized into logical groups that reflect the resour
 
 **Mass & Services** - `mass_name`, `mass_value`, `mass_unit`, `service_category`, `service_type`, `parameter_service_code`, `parameter_service_unit`, `parameter_service_name`, `parameter_service_quantity`, `service_cost_sum`
 
-```mermaid
-flowchart LR
-    subgraph Tech["📐 Technology Norms"]
-        L["👷 Labor<br/>172 hrs/100m²"]
-        M["🧱 Materials<br/>632 m²/100m²"]
-        E["🚜 Equipment<br/>1.67 hrs/100m²"]
-    end
-    
-    subgraph Prices["💰 VARIABLE - Regional Prices"]
-        LP["€17.95/hr"]
-        MP["€5.02/m²"]
-        EP["€38.42/hr"]
-    end
-    
-    subgraph Result["📊 RESULT"]
-        COST["🧾 €7,725.91<br/>per 100m²"]
-    end
-    
-    Tech -->|"×"| Prices --> Result
-    
-    style Tech fill:#dbeafe,stroke:#2563eb,stroke-width:2px
-    style Prices fill:#fef3c7,stroke:#d97706,stroke-width:2px
-    style Result fill:#d1fae5,stroke:#059669,stroke-width:2px
-```
+### Cost Calculation Formula
 
+| Component | Technology Norm | × | Regional Price | = | Cost |
+|-----------|-----------------|---|----------------|---|------|
+| 👷 **Labor** | 172 hrs/100m² | × | €17.95/hr | = | €3,088.11 |
+| 🧱 **Materials** | 632 m²/100m² | × | €5.02/m² | = | €3,170.73 |
+| 🚜 **Equipment** | 1.67 hrs/100m² | × | €38.42/hr | = | €64.18 |
+| | | | **Total** | = | **€7,725.91 per 100m²** |
+
+---
 
 ## Methodology
 
@@ -335,127 +357,155 @@ Star DDC workflow on GitHub and be instantly notified of new releases.
   
 - **Advanced** - AI/ML Training, CAD (BIM) 5D, Deep-Dive Investment Audit
 
-### n8n Workflows
+---
 
-Text-Photo-CAD-BIM-to-Cost Estimation Pipeline
-Automatic cost estimation based on Revit/IFC/DWG models or simply using a description or photo from construction site allows the use of modern pipeline and workflow tools (n8n, dify, or sim ai) to apply artificial intelligence and vector search in the DDC CWICR price database to compile complete estimates and a technological description of the project.
+## n8n Workflows — Detailed Description
+
+Four production-ready workflows for automated construction cost estimation. Each workflow connects to the DDC CWICR vector database via Qdrant and uses AI models for intelligent parsing and matching.
+
+| # | Workflow | Input | Best For | Download |
+|---|----------|-------|----------|----------|
+| 1 | [Text Estimator Bot](#1%EF%B8%8F⃣-text-estimator-bot) | 💬 Text | Quick estimates from descriptions | [JSON](./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json) |
+| 2 | [Photo Estimator](#2%EF%B8%8F⃣-photo-cost-estimator) | 📷 Photo | Site visits, visual inspections | [JSON](./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json) |
+| 3 | [Universal Bot](#3%EF%B8%8F⃣-universal-estimator-bot-text--photo--pdf) | 💬📷📄 All | Full-featured production use | [JSON](./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json) |
+| 4 | [CAD/BIM Pipeline](#4%EF%B8%8F⃣-cad-bim-cost-estimation-pipeline) | 🏗️ Revit/IFC/DWG | BIM-based 4D/5D estimation | [JSON](./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json) |
 
 ---
 
-### Ready-to-Use n8n Workflows
+### 1️⃣ Text Estimator Bot
 
-Three production-ready workflows for automated construction cost estimation using the DDC CWICR database:
-
----
-
-#### 1️⃣ Text Estimator Bot
 **File:** `n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json`
 
 Telegram bot for text-based cost estimation. Describe construction works in natural language — the bot parses input, searches the vector database, and returns detailed cost breakdowns.
 
-```
-flowchart LR
-    A[💬 Text Input] --> B[🤖 AI Parse]
-    B --> C[🔍 Vector Search]
-    C --> D[📊 Cost Report]
-```
+**How it works:**
+
+| Step | Action | Technology |
+|------|--------|------------|
+| 1 | User sends text description | Telegram Bot API |
+| 2 | AI parses and extracts work items | OpenAI / Claude / Gemini |
+| 3 | Generate embeddings for each item | OpenAI `text-embedding-3-large` |
+| 4 | Search matching rates in database | Qdrant vector search |
+| 5 | AI reranks results for accuracy | LLM scoring |
+| 6 | Calculate costs and generate report | HTML / Excel / PDF |
 
 **Features:**
-- 💬 Natural language input (any format)
-- 🤖 AI-powered text parsing (OpenAI/Claude/Gemini)
-- 🔍 Semantic search in Qdrant
-- 🌍 9 languages supported
-- 📊 HTML/Excel/PDF export
-- ✏️ Edit quantities before calculation
+| Feature | Description |
+|---------|-------------|
+| 💬 Natural language input | Accepts any text format — lists, sentences, structured descriptions |
+| 🤖 Multi-LLM support | Works with OpenAI, Claude, or Gemini (switchable) |
+| 🔍 Semantic search | Finds best matches even with different wording |
+| 🌍 9 languages | DE, EN, RU, ES, FR, PT, ZH, AR, HI |
+| 📊 Multiple exports | HTML report, Excel spreadsheet, PDF document |
+| ✏️ Interactive editing | Modify quantities before final calculation |
 
-**Setup:** Telegram Bot Token + OpenAI API + Qdrant
+**Required credentials:**
+- Telegram Bot Token (from @BotFather)
+- OpenAI API Key (for embeddings + optional LLM)
+- Qdrant URL + API Key
 
 ---
 
-#### 2️⃣ Photo Cost Estimator
+### 2️⃣ Photo Cost Estimator
+
 **File:** `n8n_2_Photo_Cost_Estimate_DDC_CWICR.json`
 
 Web form interface for photo-based estimation. Upload a construction photo — AI Vision identifies elements, estimates dimensions, and calculates costs automatically.
 
-```
-flowchart LR
-    A[📷 Photo Upload] --> B[👁️ GPT-4 Vision]
-    B --> C[🔧 Decompose Works]
-    C --> D[🔍 Vector Search]
-    D --> E[📄 HTML Report]
-```
+**How it works:**
+
+| Step | Action | Technology |
+|------|--------|------------|
+| 1 | User uploads photo via web form | n8n Form Trigger |
+| 2 | AI Vision analyzes the image | GPT-4 Vision |
+| 3 | Identify room type, elements, materials | Structured JSON extraction |
+| 4 | Estimate dimensions from reference objects | AI reasoning (doors, tiles, etc.) |
+| 5 | Decompose elements into work items | LLM processing |
+| 6 | Price each work via vector search | Qdrant + OpenAI embeddings |
+| 7 | Generate professional HTML report | Styled output |
 
 **Features:**
-- 📷 Photo analysis via GPT-4 Vision
-- 📐 Automatic dimension estimation
-- 🏠 Room type detection (bathroom, kitchen, etc.)
-- 🔨 Work type: New/Renovation/Repair
-- 🌍 9 regional price databases
-- 📄 Professional HTML report output
+| Feature | Description |
+|---------|-------------|
+| 📷 Photo analysis | GPT-4 Vision identifies construction elements |
+| 📐 Auto-dimensioning | Estimates sizes using reference objects (doors, tiles) |
+| 🏠 Room detection | Bathroom, kitchen, bedroom, exterior, etc. |
+| 🔨 Work type support | New construction / Renovation / Repair |
+| 🌍 9 regional databases | Prices localized to Berlin, Toronto, Paris, etc. |
+| 📄 Professional reports | Clean HTML output ready for clients |
 
-**Setup:** OpenAI API (GPT-4 Vision) + Qdrant
+**Required credentials:**
+- OpenAI API Key (GPT-4 Vision + embeddings)
+- Qdrant URL + API Key
 
 ---
 
-#### 3️⃣ Universal Estimator Bot (Text + Photo + PDF)
+### 3️⃣ Universal Estimator Bot (Text + Photo + PDF)
+
 **File:** `n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json`
 
-Full-featured Telegram bot supporting all input types: text descriptions, construction photos, and PDF floor plans.
+Full-featured Telegram bot supporting all input types: text descriptions, construction photos, and PDF floor plans. The most comprehensive workflow for production use.
 
-```
-flowchart LR
-    subgraph INPUT
-        A[💬 Text]
-        B[📷 Photo]
-        C[📄 PDF]
-    end
-    INPUT --> D[🤖 AI Analysis]
-    D --> E[🔍 Qdrant Search]
-    E --> F[📊 Cost Estimate]
-    F --> G[📤 Export]
-```
+**How it works:**
+
+| Step | Action | Technology |
+|------|--------|------------|
+| 1 | User sends text, photo, or PDF | Telegram Bot API |
+| 2 | Router detects input type | Content-type analysis |
+| 3a | **Text:** AI parses work items | OpenAI / Gemini |
+| 3b | **Photo:** Vision AI extracts elements | GPT-4 Vision / Gemini 2.0 |
+| 3c | **PDF:** Extract and analyze pages | PDF processing + Vision |
+| 4 | Semantic search in DDC CWICR | Qdrant vector database |
+| 5 | AI reranking for best matches | LLM scoring |
+| 6 | Interactive editing via bot menu | Telegram inline keyboards |
+| 7 | Export results | HTML / Excel / PDF |
+
+**17 Bot Actions:**
+| Action | Description |
+|--------|-------------|
+| `/start` | Language selection menu |
+| Photo upload | Trigger AI vision analysis |
+| Text message | Parse and extract work items |
+| PDF upload | Process floor plans |
+| Edit quantities | Modify before calculation |
+| Add work | Manual work item entry |
+| Calculate | Run full cost estimation |
+| View details | Show resources for each item |
+| Export Excel | Download CSV spreadsheet |
+| Export PDF | Generate PDF report |
+| Help | Show usage instructions |
+| Refine | Re-analyze with corrections |
 
 **Features:**
-- 📷 Photo analysis (Gemini 2.0 / GPT-4 Vision)
-- 📄 PDF floor plan processing
-- 💬 Text description parsing
-- 🔍 Vector search with AI reranking
-- ✏️ Edit/add works interactively
-- 📊 HTML/Excel/PDF export
-- 🌍 9 languages, 17 bot actions
+| Feature | Description |
+|---------|-------------|
+| 📷 Dual Vision AI | Gemini 2.0 Flash or GPT-4 Vision (configurable) |
+| 📄 PDF processing | Floor plans, scanned BOQ, documents |
+| 💬 Smart text parsing | Handles lists, tables, free-form text |
+| 🔍 AI reranking | Improves match accuracy |
+| ✏️ Full editing | Add, remove, modify work items |
+| 📊 Multi-format export | HTML, Excel, PDF |
+| 🌍 9 languages | Complete localization |
 
-**Setup:** Telegram + OpenAI + Gemini + Qdrant
+**Required credentials:**
+- Telegram Bot Token
+- OpenAI API Key (embeddings)
+- Gemini API Key (Vision) or OpenAI GPT-4 Vision
+- Qdrant URL + API Key
 
 ---
 
-### Quick Start
+### 4️⃣ CAD (BIM) Cost Estimation Pipeline
 
-```bash
-# 1. Import workflow to n8n
-# 2. Configure credentials in 🔑 TOKEN node:
-{
-  "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
-  "OPENAI_API_KEY": "YOUR_OPENAI_KEY",
-  "GEMINI_API_KEY": "YOUR_GEMINI_KEY",
-  "QDRANT_URL": "http://localhost:6333",
-  "QDRANT_API_KEY": ""
-}
-# 3. Load DDC CWICR collection to Qdrant
-# 4. Activate workflow
-```
+**File:** `n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json`
 
-| Workflow | Input Type | Best For |
-|----------|-----------|----------|
-| Text Estimator | 💬 Text only | Quick estimates from descriptions |
-| Photo Estimator | 📷 Photos | Site visits, visual inspections |
-| Universal Bot | 💬📷📄 All | Full-featured production use |
+Automated cost estimation from Revit/IFC/DWG models. Extracts BIM data, classifies elements, decomposes into work items, and generates 4D/5D estimates with full resource breakdown.
 
-## CAD (BIM) → Cost Estimation Pipeline with DDC CWICR
-
-Automated cost estimation workflow from Revit/BIM models using AI and vector search. 
-This example is fully functional and ready to use right now — no additional setup required beyond API keys. Run it, explore the outputs, and understand how each stage works.
-
-But this is just the beginning.
+<p align="left">
+  <a href="https://datadrivenconstruction.io">
+    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/CAD%20(Revit)%20to%205D-4D%20Cost%20and%20Time%20Estimate.jpg" alt="DataDrivenConstruction">
+  </a>
+</p>
 
 **n8n provides 400+ native integrations** with platforms like Google Sheets, Notion, Slack, Airtable, databases (PostgreSQL, MongoDB), cloud storage, and more. Every node in this workflow is modular — you can:
 
@@ -465,14 +515,8 @@ But this is just the beginning.
 - 🔧 **Modify any stage** to match your estimation methodology
 
 The workflow is yours to adapt. No restrictions. No licensing fees. Full control.
-**Have improvements?** PRs are welcome. Let's build the future of construction estimation together.
 
-<p align="left">
-  <a href="https://datadrivenconstruction.io">
-    <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/CAD%20(Revit)%20to%205D-4D%20Cost%20and%20Time%20Estimate.jpg" alt="DataDrivenConstruction">
-  </a>
-</p>
-
+---
 
 ## 📋 Prerequisites
 
@@ -483,91 +527,82 @@ The workflow is yours to adapt. No restrictions. No licensing fees. Full control
 | **[OpenAI API](https://platform.openai.com/)** | For embeddings (`text-embedding-3-large`) | Generates vector embeddings for BIM elements and cost database matching |
 | **LLM API** | [OpenAI GPT-4o](https://platform.openai.com/) / [Claude](https://www.anthropic.com/) / [Gemini](https://ai.google.dev/) / [xAI Grok](https://x.ai/) | AI models for work item classification and estimate generation |
 | **[DDC Converter](https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto)** | `RvtExporter.exe` | Extracts BIM data from Revit models to Excel/JSON for processing |
+
 ---
 
-## 🚀 Quick Start
+## Workflows Quick Start
 
-### 1. Import Workflow
+### Step 1: Import Workflow
 
 ```
 n8n → New workflow → Import from File → Select JSON
 ```
 
-### 2. Configure Credentials
+### Step 2: Configure Credentials
 
-Create credentials in n8n for:
+In the **🔑 TOKEN** node, set your API keys:
 
-| Credential | Required for |
-|------------|--------------|
-| `OpenAI API` | Embeddings + LLM (if using GPT-4o) |
-| `Qdrant API` | Vector database connection |
-
-### 3. Set Qdrant URL
-
-In the **"STAGE 5.1 - Vector Search"** node, configure:
-```
-URL: https://your-qdrant-instance.cloud.qdrant.io
+```json
+{
+  "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+  "OPENAI_API_KEY": "YOUR_OPENAI_KEY",
+  "GEMINI_API_KEY": "YOUR_GEMINI_KEY",
+  "QDRANT_URL": "http://localhost:6333",
+  "QDRANT_API_KEY": ""
+}
 ```
 
-### 4. Configure Input Parameters
+### Step 3: Load DDC CWICR to Qdrant
 
-In the **"Setup - Define file paths"** node:
+Download snapshot from [Releases](#releases) and import:
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `path_to_converter` | Path to RvtExporter.exe | `C:\DDC\RvtExporter.exe` |
-| `project_file` | Path to .rvt file | `C:\Projects\building.rvt` |
-| `group_by` | BIM grouping field | `Type Name` |
-| `language_code` | Output language | `DE`, `EN`, `RU`, etc. |
+```bash
+curl -X POST "http://localhost:6333/collections/ddc_cwicr_en/snapshots/upload" \
+  -H "Content-Type: multipart/form-data" \
+  -F "snapshot=@EN_TORONTO_workitems_EMBEDDINGS_3072_DDC.snapshot"
+```
 
-<p align="center">
-  <br>
-  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/AI%20makes%20it%20possible%20%20%20%20to%20automate%20%20the%20work%20of%20data%20processing%20specialists.jpg" width="100%"/>
-  <br></br>
-</p>
+### Step 4: Activate & Test
+
+- Enable the workflow in n8n
+- For Telegram bots: send `/start` to your bot
+- For web forms: open the form URL provided by n8n
+
+---
 
 ## 🌍 Supported Languages & Price Levels
 
-| Code | Language | Price Level | Currency |
-|------|----------|-------------|----------|
-| `AR` | Arabic | Dubai | AED |
-| `DE` | German | Berlin | EUR |
-| `EN` | English | Toronto | CAD |
-| `ES` | Spanish | Barcelona | EUR |
-| `FR` | French | Paris | EUR |
-| `HI` | Hindi | Mumbai | INR |
-| `PT` | Portuguese | São Paulo | BRL |
-| `RU` | Russian | St. Petersburg | RUB |
-| `ZH` | Chinese | Shanghai | CNY |
+| Code | Language | Price Level | Currency | Qdrant Collection |
+|------|----------|-------------|----------|-------------------|
+| `AR` | Arabic | Dubai | AED | `ddc_cwicr_ar` |
+| `DE` | German | Berlin | EUR | `ddc_cwicr_de` |
+| `EN` | English | Toronto | CAD | `ddc_cwicr_en` |
+| `ES` | Spanish | Barcelona | EUR | `ddc_cwicr_es` |
+| `FR` | French | Paris | EUR | `ddc_cwicr_fr` |
+| `HI` | Hindi | Mumbai | INR | `ddc_cwicr_hi` |
+| `PT` | Portuguese | São Paulo | BRL | `ddc_cwicr_pt` |
+| `RU` | Russian | St. Petersburg | RUB | `ddc_cwicr_ru` |
+| `ZH` | Chinese | Shanghai | CNY | `ddc_cwicr_zh` |
 
-
+---
 
 ## 📊 Pipeline Stages
-```
-┌─────────────────────────────────────────────────────────────┐
-│  STAGE 0   │  Collect BIM data from Revit export           │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 1   │  AI detects project type (Residential/etc.)   │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 2   │  AI generates construction phases             │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 3   │  AI assigns element types to phases           │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 4   │  AI decomposes types into work items          │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 5   │  Vector search for pricing in DDC CWICR       │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 6   │  Map BIM units → Rate units                   │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 7   │  Calculate costs (Qty × Unit Price)           │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 8   │  Aggregate results by phases                  │
-├─────────────────────────────────────────────────────────────┤
-│  STAGE 9   │  Generate HTML + XLS reports                  │
-└─────────────────────────────────────────────────────────────┘
-```
 
-**Pipeline Flow**
+The CAD/BIM workflow processes data through 10 stages:
+
+| Stage | Name | Description |
+|-------|------|-------------|
+| **0** | Collect BIM Data | Extract elements from Revit via DDC Converter |
+| **1** | Project Detection | AI identifies project type (Residential, Commercial, etc.) |
+| **2** | Phase Generation | AI creates construction phases |
+| **3** | Element Assignment | AI maps BIM types to phases |
+| **4** | Work Decomposition | AI breaks types into work items ("Brick Wall" → masonry, mortar, plaster) |
+| **5** | Vector Search | Find matching rates in DDC CWICR via Qdrant |
+| **6** | Unit Mapping | Convert BIM units to rate units |
+| **7** | Cost Calculation | Qty × Unit Price for each work item |
+| **7.5** | Validation | CTO review for completeness and duplicates |
+| **8** | Aggregation | Sum by phases and categories |
+| **9** | Report Generation | Create HTML and Excel outputs |
 
 ```mermaid
 flowchart TB
@@ -619,6 +654,7 @@ flowchart TB
     style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
 ```
 
+---
 
 ## ⚙️ LLM Model Selection
 
@@ -634,6 +670,7 @@ The workflow supports multiple AI providers. Enable your preferred model in the 
 
 To switch models: **Enable** the desired model node and **Disable** others.
 
+---
 
 ## 📁 Output Files
 
@@ -646,8 +683,9 @@ project_YYYY-MM-DD.xls    ← Excel-compatible spreadsheet
   <br>
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/The%20generated%20report%20includes.jpg" width="100%"/>
   <br></br>
-</p
+</p>
 
+---
 
 ## 🔗 Qdrant Collections
 
@@ -659,7 +697,7 @@ The workflow automatically selects the correct collection based on `language_cod
 
 Example: `DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR`
 
-
+---
 
 ## ⚠️ Troubleshooting
 
@@ -669,29 +707,8 @@ Example: `DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR`
 | "Qdrant connection failed" | Verify Qdrant URL and API key in credentials |
 | "Rate limit exceeded" | Reduce batch size or add delays between API calls |
 | "No pricing found" | Check if the correct language collection exists in Qdrant |
-
-
----
-  
-We are gradually expanding a library of ready-to-use n8n workflows for automated construction cost estimation:
-
-- **Image-based cost calculation**  
-   Upload drawings, details or site photos, and the workflow will automatically extract structured data and match it with work items and resources from the DDC database.
-
--  **Text-to-estimate (project description → cost breakdown)**  
-   Provide a short natural-language description of the project, and the workflow will generate a structured cost estimate with work items, quantities and resource groups.
-
--  **Anything related to data-driven construction workflows**  
-   From file conversion and validation to syncing estimates with other systems, notifications, dashboards and custom integrations – any repetitive task in your cost and project data pipeline can become an n8n workflow.
-
-If you want to see more workflows, follow our official channels, star this repository, and feel free to share your ideas or your own n8n solutions with the community.
-
-
-Automate construction data processing with ready-made CAD-BIM n8n workflows:
-
-<a href="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto">
-  <img src="https://img.shields.io/badge/cad2data_Pipeline-GitHub-181717?style=for-the-badge&logo=github" alt="cad2data Pipeline">
-</a>
+| "Telegram webhook error" | Ensure workflow is active and webhook URL is accessible |
+| "Vision API failed" | Verify Gemini or OpenAI Vision API key is valid |
 
 ---
 
@@ -699,11 +716,9 @@ Automate construction data processing with ready-made CAD-BIM n8n workflows:
 
 Ready-to-use Qdrant collections with OpenAI `text-embedding-3-large` embeddings for semantic search across construction work items.
 
-Vector databases allow you to “talk” to your data in natural language – using simple sentences or short phrases instead of code or complex filters. This dramatically speeds up finding the right work item or cost line, even in very large datasets.
+Vector databases allow you to "talk" to your data in natural language – using simple sentences or short phrases instead of code or complex filters. This dramatically speeds up finding the right work item or cost line, even in very large datasets.
 
 These Qdrant collections can be connected to application via modern automation and integration workflows (for example, low-code/no-code Workflow and Pipeline tools). You can build assistants that search, filter and explain construction work items, or integrate semantic search directly into your existing estimation and project-control tools.
-
-If you would like to learn more about vector databases, their practical use in construction, and how to build Workflows and Pipelines on top of them, please star this repository and subscribe to our updates.
 
 ---
 
@@ -866,6 +881,12 @@ DDC CWICR is a free and open project dedicated to making the construction indust
 We invite you to submit your open source workflows, pipelines, and integrations based on DDC CWICR-tools that anyone can freely use in their work. The top solutions will be published with full author attribution on GitHub and announced through our newsletter and social media channels, reaching tens of thousands of professional subscribers. This places your name directly in front of an international community of estimators, BIM specialists, and project managers.
 
 Together we are changing the industry. You can send your solution to info@datadrivenconstruction.io with the subject "DDC Open Workflow" or submit a Pull Request directly to our GitHub repositories.
+
+Automate construction data processing with ready-made CAD-BIM n8n workflows:
+
+<a href="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto">
+  <img src="https://img.shields.io/badge/cad2data_Pipeline-GitHub-181717?style=for-the-badge&logo=github" alt="cad2data Pipeline">
+</a>
 
 
 ## License

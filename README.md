@@ -342,7 +342,113 @@ Automatic cost estimation based on Revit/IFC/DWG models or simply using a descri
 
 ---
 
-# 🔧 n8n Pipeline Setup Guide
+### Ready-to-Use n8n Workflows
+
+Three production-ready workflows for automated construction cost estimation using the DDC CWICR database:
+
+---
+
+#### 1️⃣ Text Estimator Bot
+**File:** `n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json`
+
+Telegram bot for text-based cost estimation. Describe construction works in natural language — the bot parses input, searches the vector database, and returns detailed cost breakdowns.
+
+```
+flowchart LR
+    A[💬 Text Input] --> B[🤖 AI Parse]
+    B --> C[🔍 Vector Search]
+    C --> D[📊 Cost Report]
+```
+
+**Features:**
+- 💬 Natural language input (any format)
+- 🤖 AI-powered text parsing (OpenAI/Claude/Gemini)
+- 🔍 Semantic search in Qdrant
+- 🌍 9 languages supported
+- 📊 HTML/Excel/PDF export
+- ✏️ Edit quantities before calculation
+
+**Setup:** Telegram Bot Token + OpenAI API + Qdrant
+
+---
+
+#### 2️⃣ Photo Cost Estimator
+**File:** `n8n_2_Photo_Cost_Estimate_DDC_CWICR.json`
+
+Web form interface for photo-based estimation. Upload a construction photo — AI Vision identifies elements, estimates dimensions, and calculates costs automatically.
+
+```
+flowchart LR
+    A[📷 Photo Upload] --> B[👁️ GPT-4 Vision]
+    B --> C[🔧 Decompose Works]
+    C --> D[🔍 Vector Search]
+    D --> E[📄 HTML Report]
+```
+
+**Features:**
+- 📷 Photo analysis via GPT-4 Vision
+- 📐 Automatic dimension estimation
+- 🏠 Room type detection (bathroom, kitchen, etc.)
+- 🔨 Work type: New/Renovation/Repair
+- 🌍 9 regional price databases
+- 📄 Professional HTML report output
+
+**Setup:** OpenAI API (GPT-4 Vision) + Qdrant
+
+---
+
+#### 3️⃣ Universal Estimator Bot (Text + Photo + PDF)
+**File:** `n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json`
+
+Full-featured Telegram bot supporting all input types: text descriptions, construction photos, and PDF floor plans.
+
+```
+flowchart LR
+    subgraph INPUT
+        A[💬 Text]
+        B[📷 Photo]
+        C[📄 PDF]
+    end
+    INPUT --> D[🤖 AI Analysis]
+    D --> E[🔍 Qdrant Search]
+    E --> F[📊 Cost Estimate]
+    F --> G[📤 Export]
+```
+
+**Features:**
+- 📷 Photo analysis (Gemini 2.0 / GPT-4 Vision)
+- 📄 PDF floor plan processing
+- 💬 Text description parsing
+- 🔍 Vector search with AI reranking
+- ✏️ Edit/add works interactively
+- 📊 HTML/Excel/PDF export
+- 🌍 9 languages, 17 bot actions
+
+**Setup:** Telegram + OpenAI + Gemini + Qdrant
+
+---
+
+### Quick Start
+
+```bash
+# 1. Import workflow to n8n
+# 2. Configure credentials in 🔑 TOKEN node:
+{
+  "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+  "OPENAI_API_KEY": "YOUR_OPENAI_KEY",
+  "GEMINI_API_KEY": "YOUR_GEMINI_KEY",
+  "QDRANT_URL": "http://localhost:6333",
+  "QDRANT_API_KEY": ""
+}
+# 3. Load DDC CWICR collection to Qdrant
+# 4. Activate workflow
+```
+
+| Workflow | Input Type | Best For |
+|----------|-----------|----------|
+| Text Estimator | 💬 Text only | Quick estimates from descriptions |
+| Photo Estimator | 📷 Photos | Site visits, visual inspections |
+| Universal Bot | 💬📷📄 All | Full-featured production use |
 
 ## CAD (BIM) → Cost Estimation Pipeline with DDC CWICR
 

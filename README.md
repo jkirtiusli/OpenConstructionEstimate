@@ -32,7 +32,7 @@
 <table width="100%">
 <tr>
 
-<td align="center" valign="top">
+<td align="center" valign="top" width="33%">
 <br>
 <h3>📝 Text</h3>
 <p>Quick scope-to-estimate<br>from a short description</p>
@@ -47,7 +47,7 @@
 <br><br>
 </td>
 
-<td align="center" valign="top">
+<td align="center" valign="top" width="33%">
 <br>
 <h3>📷 Photo / PDF</h3>
 <p>Site photos, scanned BOQ,<br>photo-PDF from the field</p>
@@ -66,7 +66,7 @@
 <br><br>
 </td>
 
-<td align="center" valign="top">
+<td align="center" valign="top" width="33%">
 <br>
 <h3>🧊 CAD / BIM</h3>
 <p>Revit / IFC / DWG-based<br>quantification & estimating</p>
@@ -83,6 +83,76 @@
 
 </tr>
 </table>
+
+<br>
+
+---
+
+<h3 align="center">🤖 Try It Now — Live Demo Bots</h3>
+<p align="center"><i>Test the estimation workflows instantly in Telegram</i></p>
+
+<br>
+
+<table width="100%">
+<tr>
+
+<td align="center" valign="top" width="50%">
+<br>
+<h3>💬 Text-Only Bot</h3>
+<p><b>@TextOpenConstructionEstimate_bot</b></p>
+<p>Create complete cost estimates<br>from text descriptions</p>
+
+<br>
+
+<p>
+✅ Natural language input<br>
+✅ Semantic search in 55,000+ work items<br>
+✅ Detailed cost breakdown<br>
+✅ HTML & Excel export
+</p>
+
+<br>
+
+<a href="https://t.me/TextOpenConstructionEstimate_bot">
+<img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Text Bot"/>
+</a>
+<br><br>
+</td>
+
+<td align="center" valign="top" width="50%">
+<br>
+<h3>📷 Universal Bot</h3>
+<p><b>@OpenConstructionEstimate_bot</b></p>
+<p>Full-featured bot for<br>text, photos, and PDF</p>
+
+<br>
+
+<p>
+✅ Text descriptions<br>
+✅ Construction site photos (AI Vision)<br>
+✅ PDF floor plans & scanned BOQ<br>
+✅ Multi-format export
+</p>
+
+<br>
+
+<a href="https://t.me/OpenConstructionEstimate_bot">
+<img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Universal Bot"/>
+</a>
+<br><br>
+</td>
+
+</tr>
+</table>
+
+<p align="center">
+<i>⚠️ Bots not responding? Please reach out in our Telegram community:</i><br><br>
+<a href="https://t.me/datadrivenconstruction">
+<img src="https://img.shields.io/badge/💬_Telegram_Community-datadrivenconstruction-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Community"/>
+</a>
+</p>
+
+---
 
 <br>
 <p align="center">
@@ -115,6 +185,7 @@
 
 ### n8n Workflows
 - [n8n Workflows Overview](#-n8n-workflows) — Choose your input type
+- [Try It Now — Live Demo Bots](#-try-it-now--live-demo-bots) — Test instantly in Telegram
 - [Workflow 1: Text Estimator Bot](#1️⃣-text-estimator-bot) — Telegram bot for text input
 - [Workflow 2: Photo Cost Estimator](#2️⃣-photo-cost-estimator) — Web form with AI Vision
 - [Workflow 3: Universal Bot](#3️⃣-universal-estimator-bot-text--photo--pdf) — Text + Photo + PDF
@@ -164,12 +235,12 @@ The structured data can be accessed through tabular formats (XLSX, CSV, Parquet)
 
 ### Available Formats
 
-| Format | Extension | Size | Best For | Features |
-|--------|-----------|------|----------|----------|
-| **Excel** | `.xlsx` | ~150–400 MB | Manual analysis, filtering, pivot tables | Human-readable, full formatting |
-| **Parquet** | `.parquet` | ~55 MB | ETL pipelines, ML training, Big Data | Columnar, excellent compression |
-| **CSV** | `.csv` | ~1.3 GB | Database import, legacy systems | Universal compatibility |
-| **Qdrant** | `.snapshot` | ~1 GB | Semantic search, RAG, AI assistants | Pre-computed OpenAI embeddings (3072d) |
+| Format      | Extension   | Size         | Best For                              | Features                             |
+|-------------|-------------|--------------|---------------------------------------|--------------------------------------|
+| **Excel**   | `.xlsx`     | ~150–400 MB  | Manual analysis, filtering, pivots    | Human-readable, full formatting      |
+| **Parquet** | `.parquet`  | ~55 MB       | ETL pipelines, ML training, Big Data  | Columnar, excellent compression      |
+| **CSV**     | `.csv`      | ~1.3 GB      | Database import, legacy systems       | Universal compatibility              |
+| **Qdrant**  | `.snapshot` | ~1 GB        | Semantic search, RAG, AI assistants   | Pre-computed OpenAI embeddings       |
 
 
 A live demo is available at [openconstructionestimate.com](https://openconstructionestimate.com/), where you can explore the data and see the vector database in action for semantic search.
@@ -266,12 +337,12 @@ The 85 database fields are organized into logical groups that reflect the resour
 
 ### Cost Calculation Formula
 
-| Component | Technology Norm | × | Regional Price | = | Cost |
-|-----------|-----------------|---|----------------|---|------|
-| 👷 **Labor** | 172 hrs/100m² | × | €17.95/hr | = | €3,088.11 |
-| 🧱 **Materials** | 632 m²/100m² | × | €5.02/m² | = | €3,170.73 |
-| 🚜 **Equipment** | 1.67 hrs/100m² | × | €38.42/hr | = | €64.18 |
-| | | | **Total** | = | **€7,725.91 per 100m²** |
+| Component         | Technology Norm  | ×   | Regional Price  | =   | Cost                    |
+|-------------------|------------------|-----|-----------------|-----|-------------------------|
+| 👷 **Labor**      | 172 hrs/100m²    | ×   | €17.95/hr       | =   | €3,088.11               |
+| 🧱 **Materials**  | 632 m²/100m²     | ×   | €5.02/m²        | =   | €3,170.73               |
+| 🚜 **Equipment**  | 1.67 hrs/100m²   | ×   | €38.42/hr       | =   | €64.18                  |
+|                   |                  |     | **Total**       | =   | **€7,725.91 per 100m²** |
 
 ---
 
@@ -369,12 +440,12 @@ Star DDC workflow on GitHub and be instantly notified of new releases.
 
 Four production-ready workflows for automated construction cost estimation. Each workflow connects to the DDC CWICR vector database via Qdrant and uses AI models for intelligent parsing and matching.
 
-| # | Workflow | Input | Best For | Download |
-|---|----------|-------|----------|----------|
-| 1 | [Text Estimator Bot](#1️⃣-text-estimator-bot) | 💬 Text | Quick estimates from descriptions | [JSON](./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json) |
-| 2 | [Photo Estimator](#2️⃣-photo-cost-estimator) | 📷 Photo | Site visits, visual inspections | [JSON](./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json) |
-| 3 | [Universal Bot](#3️⃣-universal-estimator-bot-text--photo--pdf) | 💬📷📄 All | Full-featured production use | [JSON](./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json) |
-| 4 | [CAD/BIM Pipeline](#4️⃣-cad-bim-cost-estimation-pipeline) | 🏗️ Revit/IFC/DWG | BIM-based 4D/5D estimation | [JSON](./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json) |
+| #   | Workflow                                                        | Input       | Best For                        | Download                                                                                            |
+|-----|-----------------------------------------------------------------|-------------|---------------------------------|-----------------------------------------------------------------------------------------------------|
+| 1   | [Text Estimator Bot](#1️⃣-text-estimator-bot)                    | 💬 Text     | Quick estimates from text       | [JSON](./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json)                      |
+| 2   | [Photo Estimator](#2️⃣-photo-cost-estimator)                     | 📷 Photo    | Site visits, visual inspections | [JSON](./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json)                                                  |
+| 3   | [Universal Bot](#3️⃣-universal-estimator-bot-text--photo--pdf)   | 💬📷📄 All  | Full-featured production use    | [JSON](./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json)            |
+| 4   | [CAD/BIM Pipeline](#4️⃣-cad-bim-cost-estimation-pipeline)        | 🏗️ Revit   | BIM-based 4D/5D estimation      | [JSON](./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json)                         |
 
 ---
 
@@ -420,24 +491,25 @@ flowchart LR
 
 **How it works:**
 
-| Step | Action | Technology |
-|------|--------|------------|
-| 1 | User sends text description | Telegram Bot API |
-| 2 | AI parses and extracts work items | OpenAI / Claude / Gemini |
-| 3 | Generate embeddings for each item | OpenAI `text-embedding-3-large` |
-| 4 | Search matching rates in database | Qdrant vector search |
-| 5 | AI reranks results for accuracy | LLM scoring |
-| 6 | Calculate costs and generate report | HTML / Excel / PDF |
+| Step  | Action                                 | Technology                             |
+|-------|----------------------------------------|----------------------------------------|
+| 1     | User sends text description            | Telegram Bot API                       |
+| 2     | AI parses and extracts work items      | OpenAI / Claude / Gemini               |
+| 3     | Generate embeddings for each item      | OpenAI `text-embedding-3-large`        |
+| 4     | Search matching rates in database      | Qdrant vector search                   |
+| 5     | AI reranks results for accuracy        | LLM scoring                            |
+| 6     | Calculate costs and generate report    | HTML / Excel / PDF                     |
 
 **Features:**
-| Feature | Description |
-|---------|-------------|
-| 💬 Natural language input | Accepts any text format — lists, sentences, structured descriptions |
-| 🤖 Multi-LLM support | Works with OpenAI, Claude, or Gemini (switchable) |
-| 🔍 Semantic search | Finds best matches even with different wording |
-| 🌍 9 languages | DE, EN, RU, ES, FR, PT, ZH, AR, HI |
-| 📊 Multiple exports | HTML report, Excel spreadsheet, PDF document |
-| ✏️ Interactive editing | Modify quantities before final calculation |
+
+| Feature                    | Description                                                          |
+|----------------------------|----------------------------------------------------------------------|
+| 💬 Natural language input  | Accepts any text format — lists, sentences, structured descriptions |
+| 🤖 Multi-LLM support       | Works with OpenAI, Claude, or Gemini (switchable)                    |
+| 🔍 Semantic search         | Finds best matches even with different wording                       |
+| 🌍 9 languages             | DE, EN, RU, ES, FR, PT, ZH, AR, HI                                   |
+| 📊 Multiple exports        | HTML report, Excel spreadsheet, PDF document                         |
+| ✏️ Interactive editing     | Modify quantities before final calculation                           |
 
 **Required credentials:**
 - Telegram Bot Token (from @BotFather)
@@ -500,25 +572,26 @@ flowchart TB
 
 **How it works:**
 
-| Step | Action | Technology |
-|------|--------|------------|
-| 1 | User uploads photo via web form | n8n Form Trigger |
-| 2 | AI Vision analyzes the image | GPT-4 Vision |
-| 3 | Identify room type, elements, materials | Structured JSON extraction |
-| 4 | Estimate dimensions from reference objects | AI reasoning (doors, tiles, etc.) |
-| 5 | Decompose elements into work items | LLM processing |
-| 6 | Price each work via vector search | Qdrant + OpenAI embeddings |
-| 7 | Generate professional HTML report | Styled output |
+| Step  | Action                                        | Technology                           |
+|-------|-----------------------------------------------|--------------------------------------|
+| 1     | User uploads photo via web form               | n8n Form Trigger                     |
+| 2     | AI Vision analyzes the image                  | GPT-4 Vision                         |
+| 3     | Identify room type, elements, materials       | Structured JSON extraction           |
+| 4     | Estimate dimensions from reference objects    | AI reasoning (doors, tiles, etc.)    |
+| 5     | Decompose elements into work items            | LLM processing                       |
+| 6     | Price each work via vector search             | Qdrant + OpenAI embeddings           |
+| 7     | Generate professional HTML report             | Styled output                        |
 
 **Features:**
-| Feature | Description |
-|---------|-------------|
-| 📷 Photo analysis | GPT-4 Vision identifies construction elements |
-| 📐 Auto-dimensioning | Estimates sizes using reference objects (doors, tiles) |
-| 🏠 Room detection | Bathroom, kitchen, bedroom, exterior, etc. |
-| 🔨 Work type support | New construction / Renovation / Repair |
-| 🌍 9 regional databases | Prices localized to Berlin, Toronto, Paris, etc. |
-| 📄 Professional reports | Clean HTML output ready for clients |
+
+| Feature                | Description                                             |
+|------------------------|---------------------------------------------------------|
+| 📷 Photo analysis      | GPT-4 Vision identifies construction elements           |
+| 📐 Auto-dimensioning   | Estimates sizes using reference objects (doors, tiles)  |
+| 🏠 Room detection      | Bathroom, kitchen, bedroom, exterior, etc.              |
+| 🔨 Work type support   | New construction / Renovation / Repair                  |
+| 🌍 9 regional databases| Prices localized to Berlin, Toronto, Paris, etc.        |
+| 📄 Professional reports| Clean HTML output ready for clients                     |
 
 **Required credentials:**
 - OpenAI API Key (GPT-4 Vision + embeddings)
@@ -598,44 +671,46 @@ flowchart TB
 
 **How it works:**
 
-| Step | Action | Technology |
-|------|--------|------------|
-| 1 | User sends text, photo, or PDF | Telegram Bot API |
-| 2 | Router detects input type | Content-type analysis |
-| 3a | **Text:** AI parses work items | OpenAI / Gemini |
-| 3b | **Photo:** Vision AI extracts elements | GPT-4 Vision / Gemini 2.0 |
-| 3c | **PDF:** Extract and analyze pages | PDF processing + Vision |
-| 4 | Semantic search in DDC CWICR | Qdrant vector database |
-| 5 | AI reranking for best matches | LLM scoring |
-| 6 | Interactive editing via bot menu | Telegram inline keyboards |
-| 7 | Export results | HTML / Excel / PDF |
+| Step  | Action                                    | Technology                     |
+|-------|-------------------------------------------|--------------------------------|
+| 1     | User sends text, photo, or PDF            | Telegram Bot API               |
+| 2     | Router detects input type                 | Content-type analysis          |
+| 3a    | **Text:** AI parses work items            | OpenAI / Gemini                |
+| 3b    | **Photo:** Vision AI extracts elements    | GPT-4 Vision / Gemini 2.0      |
+| 3c    | **PDF:** Extract and analyze pages        | PDF processing + Vision        |
+| 4     | Semantic search in DDC CWICR              | Qdrant vector database         |
+| 5     | AI reranking for best matches             | LLM scoring                    |
+| 6     | Interactive editing via bot menu          | Telegram inline keyboards      |
+| 7     | Export results                            | HTML / Excel / PDF             |
 
 **17 Bot Actions:**
-| Action | Description |
-|--------|-------------|
-| `/start` | Language selection menu |
-| Photo upload | Trigger AI vision analysis |
-| Text message | Parse and extract work items |
-| PDF upload | Process floor plans |
-| Edit quantities | Modify before calculation |
-| Add work | Manual work item entry |
-| Calculate | Run full cost estimation |
-| View details | Show resources for each item |
-| Export Excel | Download CSV spreadsheet |
-| Export PDF | Generate PDF report |
-| Help | Show usage instructions |
-| Refine | Re-analyze with corrections |
+
+| Action           | Description                         |
+|------------------|-------------------------------------|
+| `/start`         | Language selection menu             |
+| Photo upload     | Trigger AI vision analysis          |
+| Text message     | Parse and extract work items        |
+| PDF upload       | Process floor plans                 |
+| Edit quantities  | Modify before calculation           |
+| Add work         | Manual work item entry              |
+| Calculate        | Run full cost estimation            |
+| View details     | Show resources for each item        |
+| Export Excel     | Download CSV spreadsheet            |
+| Export PDF       | Generate PDF report                 |
+| Help             | Show usage instructions             |
+| Refine           | Re-analyze with corrections         |
 
 **Features:**
-| Feature | Description |
-|---------|-------------|
-| 📷 Dual Vision AI | Gemini 2.0 Flash or GPT-4 Vision (configurable) |
-| 📄 PDF processing | Floor plans, scanned BOQ, documents |
-| 💬 Smart text parsing | Handles lists, tables, free-form text |
-| 🔍 AI reranking | Improves match accuracy |
-| ✏️ Full editing | Add, remove, modify work items |
-| 📊 Multi-format export | HTML, Excel, PDF |
-| 🌍 9 languages | Complete localization |
+
+| Feature               | Description                                        |
+|-----------------------|----------------------------------------------------|
+| 📷 Dual Vision AI     | Gemini 2.0 Flash or GPT-4 Vision (configurable)    |
+| 📄 PDF processing     | Floor plans, scanned BOQ, documents                |
+| 💬 Smart text parsing | Handles lists, tables, free-form text              |
+| 🔍 AI reranking       | Improves match accuracy                            |
+| ✏️ Full editing       | Add, remove, modify work items                     |
+| 📊 Multi-format export| HTML, Excel, PDF                                   |
+| 🌍 9 languages        | Complete localization                              |
 
 **Required credentials:**
 - Telegram Bot Token
@@ -721,12 +796,12 @@ The workflow is yours to adapt. No restrictions. No licensing fees. Full control
 
 ## 📋 Prerequisites
 
-| Component | Requirement | Description |
-|-----------|-------------|-------------|
-| **[n8n](https://n8n.io/)** | v1.0+ (self-hosted) | Workflow automation platform for orchestrating the estimation pipeline |
-| **[Qdrant](https://qdrant.tech/)** | Cloud or self-hosted instance | Vector database for semantic search across construction work items |
-| **[OpenAI API](https://platform.openai.com/)** | For embeddings (`text-embedding-3-large`) | Generates vector embeddings for BIM elements and cost database matching |
-| **LLM API** | [OpenAI GPT-4o](https://platform.openai.com/) / [Claude](https://www.anthropic.com/) / [Gemini](https://ai.google.dev/) / [xAI Grok](https://x.ai/) | AI models for work item classification and estimate generation |
+| Component                                          | Requirement                            | Description                                                           |
+|----------------------------------------------------|----------------------------------------|-----------------------------------------------------------------------|
+| **[n8n](https://n8n.io/)**                         | v1.0+ (self-hosted)                    | Workflow automation platform for orchestrating the estimation pipeline|
+| **[Qdrant](https://qdrant.tech/)**                 | Cloud or self-hosted instance          | Vector database for semantic search across construction work items    |
+| **[OpenAI API](https://platform.openai.com/)**     | For embeddings (`text-embedding-3-large`)| Generates vector embeddings for BIM elements and cost database matching|
+| **LLM API**                                        | OpenAI / Claude / Gemini / xAI Grok    | AI models for work item classification and estimate generation        |
 | **[DDC Converter](https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto)** | `RvtExporter.exe` | Extracts BIM data from Revit models to Excel/JSON for processing |
 
 ---
@@ -773,17 +848,17 @@ curl -X POST "http://localhost:6333/collections/ddc_cwicr_en/snapshots/upload" \
 
 ## 🌍 Supported Languages & Price Levels
 
-| Code | Language | Price Level | Currency | Qdrant Collection |
-|------|----------|-------------|----------|-------------------|
-| `AR` | Arabic | Dubai | AED | `ddc_cwicr_ar` |
-| `DE` | German | Berlin | EUR | `ddc_cwicr_de` |
-| `EN` | English | Toronto | CAD | `ddc_cwicr_en` |
-| `ES` | Spanish | Barcelona | EUR | `ddc_cwicr_es` |
-| `FR` | French | Paris | EUR | `ddc_cwicr_fr` |
-| `HI` | Hindi | Mumbai | INR | `ddc_cwicr_hi` |
-| `PT` | Portuguese | São Paulo | BRL | `ddc_cwicr_pt` |
-| `RU` | Russian | St. Petersburg | RUB | `ddc_cwicr_ru` |
-| `ZH` | Chinese | Shanghai | CNY | `ddc_cwicr_zh` |
+| Code  | Language    | Price Level     | Currency | Qdrant Collection   |
+|-------|-------------|-----------------|----------|---------------------|
+| `AR`  | Arabic      | Dubai           | AED      | `ddc_cwicr_ar`      |
+| `DE`  | German      | Berlin          | EUR      | `ddc_cwicr_de`      |
+| `EN`  | English     | Toronto         | CAD      | `ddc_cwicr_en`      |
+| `ES`  | Spanish     | Barcelona       | EUR      | `ddc_cwicr_es`      |
+| `FR`  | French      | Paris           | EUR      | `ddc_cwicr_fr`      |
+| `HI`  | Hindi       | Mumbai          | INR      | `ddc_cwicr_hi`      |
+| `PT`  | Portuguese  | São Paulo       | BRL      | `ddc_cwicr_pt`      |
+| `RU`  | Russian     | St. Petersburg  | RUB      | `ddc_cwicr_ru`      |
+| `ZH`  | Chinese     | Shanghai        | CNY      | `ddc_cwicr_zh`      |
 
 ---
 
@@ -791,19 +866,19 @@ curl -X POST "http://localhost:6333/collections/ddc_cwicr_en/snapshots/upload" \
 
 The CAD/BIM workflow processes data through 10 stages:
 
-| Stage | Name | Description |
-|-------|------|-------------|
-| **0** | Collect BIM Data | Extract elements from Revit via DDC Converter |
-| **1** | Project Detection | AI identifies project type (Residential, Commercial, etc.) |
-| **2** | Phase Generation | AI creates construction phases |
-| **3** | Element Assignment | AI maps BIM types to phases |
-| **4** | Work Decomposition | AI breaks types into work items ("Brick Wall" → masonry, mortar, plaster) |
-| **5** | Vector Search | Find matching rates in DDC CWICR via Qdrant |
-| **6** | Unit Mapping | Convert BIM units to rate units |
-| **7** | Cost Calculation | Qty × Unit Price for each work item |
-| **7.5** | Validation | CTO review for completeness and duplicates |
-| **8** | Aggregation | Sum by phases and categories |
-| **9** | Report Generation | Create HTML and Excel outputs |
+| Stage   | Name                 | Description                                                       |
+|---------|----------------------|-------------------------------------------------------------------|
+| **0**   | Collect BIM Data     | Extract elements from Revit via DDC Converter                     |
+| **1**   | Project Detection    | AI identifies project type (Residential, Commercial, etc.)        |
+| **2**   | Phase Generation     | AI creates construction phases                                    |
+| **3**   | Element Assignment   | AI maps BIM types to phases                                       |
+| **4**   | Work Decomposition   | AI breaks types into work items ("Brick Wall" → masonry, mortar)  |
+| **5**   | Vector Search        | Find matching rates in DDC CWICR via Qdrant                       |
+| **6**   | Unit Mapping         | Convert BIM units to rate units                                   |
+| **7**   | Cost Calculation     | Qty × Unit Price for each work item                               |
+| **7.5** | Validation           | CTO review for completeness and duplicates                        |
+| **8**   | Aggregation          | Sum by phases and categories                                      |
+| **9**   | Report Generation    | Create HTML and Excel outputs                                     |
 
 ---
 
@@ -811,13 +886,13 @@ The CAD/BIM workflow processes data through 10 stages:
 
 The workflow supports multiple AI providers. Enable your preferred model in the **LLM Models** section:
 
-| Model | Node Name | Status |
-|-------|-----------|--------|
-| OpenAI GPT-4o | `OpenAI LLM` | ✅ Default |
-| Claude Opus 4 | `Anthropic Chat Model2` | Disabled |
-| Gemini 2.5 Pro | `Google Gemini Chat Model` | Disabled |
-| xAI Grok | `xAI Grok Chat Model1` | Disabled |
-| DeepSeek | `DeepSeek Chat Model` | Disabled |
+| Model            | Node Name                    | Status       |
+|------------------|------------------------------|--------------|
+| OpenAI GPT-4o    | `OpenAI LLM`                 | ✅ Default   |
+| Claude Opus 4    | `Anthropic Chat Model2`      | Disabled     |
+| Gemini 2.5 Pro   | `Google Gemini Chat Model`   | Disabled     |
+| xAI Grok         | `xAI Grok Chat Model1`       | Disabled     |
+| DeepSeek         | `DeepSeek Chat Model`        | Disabled     |
 
 To switch models: **Enable** the desired model node and **Disable** others.
 
@@ -852,14 +927,14 @@ Example: `DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR`
 
 ## ⚠️ Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "No Excel file found" | Check `path_to_converter` and `project_file` paths |
-| "Qdrant connection failed" | Verify Qdrant URL and API key in credentials |
-| "Rate limit exceeded" | Reduce batch size or add delays between API calls |
-| "No pricing found" | Check if the correct language collection exists in Qdrant |
-| "Telegram webhook error" | Ensure workflow is active and webhook URL is accessible |
-| "Vision API failed" | Verify Gemini or OpenAI Vision API key is valid |
+| Issue                        | Solution                                                    |
+|------------------------------|-------------------------------------------------------------|
+| "No Excel file found"        | Check `path_to_converter` and `project_file` paths          |
+| "Qdrant connection failed"   | Verify Qdrant URL and API key in credentials                |
+| "Rate limit exceeded"        | Reduce batch size or add delays between API calls           |
+| "No pricing found"           | Check if the correct language collection exists in Qdrant   |
+| "Telegram webhook error"     | Ensure workflow is active and webhook URL is accessible     |
+| "Vision API failed"          | Verify Gemini or OpenAI Vision API key is valid             |
 
 ---
 
@@ -877,17 +952,17 @@ These Qdrant collections can be connected to application via modern automation a
 
 Download QDRANT and CSV datasets (files larger than 1 gigabyte) from [GitHub Releases](https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases).
 
-| Language | Region | CSV Files | Qdrant Snapshot |
-|----------|--------|-----------|-----------------|
-| 🇸🇦 Arabic | Dubai | `AR_DUBAI_*.csv` | `AR_DUBAI_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇨🇳 Chinese | Shanghai | `ZH_SHANGHAI_*.csv` | `ZH_SHANGHAI_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇩🇪 German | Berlin | `DE_BERLIN_*.csv` | `DE_BERLIN_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇬🇧 English | Toronto | `EN_TORONTO_*.csv` | `EN_TORONTO_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇪🇸 Spanish | Barcelona | `ES_BARCELONA_*.csv` | `ES_BARCELONA_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇫🇷 French | Paris | `FR_PARIS_*.csv` | `FR_PARIS_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇮🇳 Hindi | Mumbai | `HI_MUMBAI_*.csv` | `HI_MUMBAI_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇧🇷 Portuguese | São Paulo | `PT_SAOPAULO_*.csv` | `PT_SAOPAULO_*_EMBEDDINGS_3072_DDC.snapshot` |
-| 🇷🇺 Russian | St. Petersburg | `RU_SPB_*.csv` | `RU_SPB_*_EMBEDDINGS_3072_DDC.snapshot` |
+| Language        | Region         | CSV Files             | Qdrant Snapshot                            |
+|-----------------|----------------|-----------------------|--------------------------------------------|
+| 🇸🇦 Arabic      | Dubai          | `AR_DUBAI_*.csv`      | `AR_DUBAI_*_EMBEDDINGS_3072_DDC.snapshot`   |
+| 🇨🇳 Chinese     | Shanghai       | `ZH_SHANGHAI_*.csv`   | `ZH_SHANGHAI_*_EMBEDDINGS_3072_DDC.snapshot`|
+| 🇩🇪 German      | Berlin         | `DE_BERLIN_*.csv`     | `DE_BERLIN_*_EMBEDDINGS_3072_DDC.snapshot`  |
+| 🇬🇧 English     | Toronto        | `EN_TORONTO_*.csv`    | `EN_TORONTO_*_EMBEDDINGS_3072_DDC.snapshot` |
+| 🇪🇸 Spanish     | Barcelona      | `ES_BARCELONA_*.csv`  | `ES_BARCELONA_*_EMBEDDINGS_3072_DDC.snapshot`|
+| 🇫🇷 French      | Paris          | `FR_PARIS_*.csv`      | `FR_PARIS_*_EMBEDDINGS_3072_DDC.snapshot`   |
+| 🇮🇳 Hindi       | Mumbai         | `HI_MUMBAI_*.csv`     | `HI_MUMBAI_*_EMBEDDINGS_3072_DDC.snapshot`  |
+| 🇧🇷 Portuguese  | São Paulo      | `PT_SAOPAULO_*.csv`   | `PT_SAOPAULO_*_EMBEDDINGS_3072_DDC.snapshot`|
+| 🇷🇺 Russian     | St. Petersburg | `RU_SPB_*.csv`        | `RU_SPB_*_EMBEDDINGS_3072_DDC.snapshot`     |
 
 <a href="https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/releases/tag/v0.1.0">
   <img src="https://img.shields.io/badge/📥_Download_v0.1.0-GitHub_Releases-181717?style=for-the-badge&logo=github" alt="Download v0.1.0">

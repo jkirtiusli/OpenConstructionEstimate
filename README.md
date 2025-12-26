@@ -90,7 +90,7 @@
 <br>
 <p align="center">
   <a href="https://openconstructionestimate.com">
-    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
+    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO_(only_database)-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
   </a>
 </p>
 <br>

@@ -537,45 +537,7 @@ flowchart TB
     style Report fill:#f3e8ff,stroke:#9333ea
 ```
 
-```mermaid
-erDiagram
-    PHOTO ||--o{ ELEMENT : contains
-    ELEMENT ||--o{ WORK : decomposes_to
-    WORK ||--o{ RESOURCE : requires
-    
-    PHOTO {
-        string photo_id PK
-        string room_type
-        float floor_area_m2
-        float wall_area_m2
-        string work_type
-    }
-    
-    ELEMENT {
-        string element_id PK
-        string element_type
-        string material
-        string surface_finish
-        float estimated_size
-        string unit
-    }
-    
-    WORK {
-        string work_id PK
-        string work_name
-        string rate_code FK
-        float quantity
-        float unit_cost
-        float total_cost
-    }
-    
-    RESOURCE {
-        string resource_type
-        string resource_name
-        float quantity
-        float cost
-    }
-```
+
 
 **How it works:**
 
@@ -673,68 +635,7 @@ flowchart TB
     style Export fill:#d1fae5,stroke:#059669
 ```
 
-```mermaid
-erDiagram
-    BOT ||--o{ USER : serves
-    USER ||--o{ SESSION : has
-    SESSION ||--|| LANGUAGE : uses
-    SESSION ||--o{ INPUT : receives
-    INPUT ||--o{ WORK_ITEM : extracts
-    WORK_ITEM ||--o{ RATE_MATCH : matches
-    RATE_MATCH }o--|| DDC_CWICR : references
-    SESSION ||--o{ EXPORT : generates
-    
-    BOT {
-        string bot_token PK
-        int action_count "17 actions"
-        boolean is_active
-    }
-    
-    USER {
-        string user_id PK
-        string telegram_id
-        string preferred_language
-    }
-    
-    SESSION {
-        string session_id PK
-        string input_type "text|photo|pdf"
-        datetime started_at
-        string state
-    }
-    
-    LANGUAGE {
-        string code PK "DE|EN|RU|ES|FR|PT|ZH|AR|HI"
-        string currency
-        string qdrant_collection
-    }
-    
-    INPUT {
-        string input_id PK
-        string content_type
-        blob raw_data
-    }
-    
-    WORK_ITEM {
-        string item_id PK
-        string description
-        float quantity
-        string unit
-        boolean is_edited
-    }
-    
-    RATE_MATCH {
-        string rate_code FK
-        float score
-        float unit_cost
-        float total_cost
-    }
-    
-    EXPORT {
-        string format "html|excel|pdf"
-        blob file_data
-    }
-```
+
 
 **How it works:**
 
@@ -841,75 +742,6 @@ flowchart TB
     style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
 ```
 
-```mermaid
-erDiagram
-    BIM_MODEL ||--o{ BIM_ELEMENT : contains
-    BIM_ELEMENT ||--o{ ELEMENT_TYPE : has
-    ELEMENT_TYPE ||--o{ WORK_ITEM : decomposes_to
-    WORK_ITEM ||--o{ DDC_RATE : matches
-    DDC_RATE ||--o{ RESOURCE : includes
-    PROJECT ||--o{ PHASE : divided_into
-    PHASE ||--o{ WORK_ITEM : contains
-    
-    BIM_MODEL {
-        string file_path PK
-        string format "RVT|IFC|DWG"
-        string project_type
-        float total_area
-    }
-    
-    BIM_ELEMENT {
-        string element_id PK
-        string category
-        string family
-        float quantity
-        string unit
-    }
-    
-    ELEMENT_TYPE {
-        string type_name PK
-        string material
-        string dimensions
-        int element_count
-    }
-    
-    WORK_ITEM {
-        string work_id PK
-        string work_description
-        float quantity
-        string unit
-        string phase_id FK
-    }
-    
-    DDC_RATE {
-        string rate_code PK
-        string rate_name
-        float unit_cost
-        float labor_hours
-        float material_cost
-        float equipment_cost
-    }
-    
-    RESOURCE {
-        string resource_code
-        string resource_name
-        float quantity
-        float cost
-    }
-    
-    PROJECT {
-        string project_id PK
-        string project_type
-        string scale "small|medium|large"
-    }
-    
-    PHASE {
-        string phase_id PK
-        string phase_name
-        int sequence_order
-        float phase_cost
-    }
-```
 
 <p align="left">
   <a href="https://datadrivenconstruction.io">

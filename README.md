@@ -24,7 +24,7 @@
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate_bottom.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
-<h2 align="center">⚡ n8n Workflows</h2>
+<h3 align="center">⚡ n8n Workflows</h3>
 <p align="center"><code>Choose your input → Get cost estimate</code></p>
 
 <br>
@@ -34,7 +34,7 @@
 
 <td align="center" valign="top">
 <br>
-<h2>📝 Text</h2>
+<h3>📝 Text</h3>
 <p>Quick scope-to-estimate<br>from a short description</p>
 <p><b>Input:</b> Telegram / chat message<br>
 <b>Output:</b> Matched work items + estimate</p>
@@ -47,7 +47,7 @@
 
 <td align="center" valign="top">
 <br>
-<h2>📷 Photo / PDF</h2>
+<h3>📷 Photo / PDF</h3>
 <p>Site photos, scanned BOQ,<br>photo-PDF from the field</p>
 <p><b>Input:</b> Image or PDF pages<br>
 <b>Output:</b> Extracted scope → estimate</p>
@@ -64,7 +64,7 @@
 
 <td align="center" valign="top">
 <br>
-<h2>🏗️ CAD / BIM</h2>
+<h3>🏗️ CAD / BIM</h3>
 <p>Revit / IFC / DWG-based<br>quantification & estimating</p>
 <p><b>Input:</b> Model export <br>
 <b>Output:</b> 4D/5D estimate + breakdown</p>

@@ -85,76 +85,6 @@
 </table>
 
 <br>
-
----
-
-<h3 align="center">🤖 Try It Now — Live Demo Bots</h3>
-<p align="center"><i>Test the estimation workflows instantly in Telegram</i></p>
-
-<br>
-
-<table width="100%">
-<tr>
-
-<td align="center" valign="top" width="50%">
-<br>
-<h3>💬 Text-Only Bot</h3>
-<p><b>@TextOpenConstructionEstimate_bot</b></p>
-<p>Create complete cost estimates<br>from text descriptions</p>
-
-<br>
-
-<p>
-✅ Natural language input<br>
-✅ Semantic search in 55,000+ work items<br>
-✅ Detailed cost breakdown<br>
-✅ HTML & Excel export
-</p>
-
-<br>
-
-<a href="https://t.me/TextOpenConstructionEstimate_bot">
-<img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Text Bot"/>
-</a>
-<br><br>
-</td>
-
-<td align="center" valign="top" width="50%">
-<br>
-<h3>📷 Universal Bot</h3>
-<p><b>@OpenConstructionEstimate_bot</b></p>
-<p>Full-featured bot for<br>text, photos, and PDF</p>
-
-<br>
-
-<p>
-✅ Text descriptions<br>
-✅ Construction site photos (AI Vision)<br>
-✅ PDF floor plans & scanned BOQ<br>
-✅ Multi-format export
-</p>
-
-<br>
-
-<a href="https://t.me/OpenConstructionEstimate_bot">
-<img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Universal Bot"/>
-</a>
-<br><br>
-</td>
-
-</tr>
-</table>
-
-<p align="center">
-<i>⚠️ Bots not responding? Please reach out in our Telegram community:</i><br><br>
-<a href="https://t.me/datadrivenconstruction">
-<img src="https://img.shields.io/badge/💬_Telegram_Community-datadrivenconstruction-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Community"/>
-</a>
-</p>
-
----
-
-<br>
 <p align="center">
   <a href="https://openconstructionestimate.com">
     <img src="https://img.shields.io/badge/🌐_LIVE_DEMO_(only_database)-openconstructionestimate.com-2563eb?style=for-the-badge" alt="Live Demo">
@@ -455,6 +385,19 @@ Four production-ready workflows for automated construction cost estimation. Each
 
 Telegram bot for text-based cost estimation. Describe construction works in natural language — the bot parses input, searches the vector database, and returns detailed cost breakdowns.
 
+<h3 align="center">🤖 Try It Now — Live Demo Bots</h3>
+<p align="center"><i>Test the estimation workflows instantly in Telegram</i></p>
+<br>
+<h3>💬 Text-Only Bot</h3>
+<p><b>@TextOpenConstructionEstimate_bot</b></p>
+<p>Create complete cost estimates<br>from text descriptions</p>
+<a href="https://t.me/TextOpenConstructionEstimate_bot">
+<img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Text Bot"/>
+</a>
+
+
+
+
 ```mermaid
 flowchart LR
     subgraph Input["💬 INPUT"]
@@ -604,6 +547,27 @@ flowchart TB
 **File:** `n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json`
 
 Full-featured Telegram bot supporting all input types: text descriptions, construction photos, and PDF floor plans. The most comprehensive workflow for production use.
+
+<h3 align="center">🤖 Try It Now — Live Demo Bots</h3>
+<p align="center"><i>Test the estimation workflows instantly in Telegram</i></p>
+<br>
+<h3>📷 Universal Bot</h3>
+<p><b>@OpenConstructionEstimate_bot</b></p>
+<p>Full-featured bot for<br>text, photos, and PDF</p>
+<br>
+<p>
+✅ Text descriptions<br>
+✅ Construction site photos (AI Vision)<br>
+✅ PDF floor plans & scanned BOQ<br>
+✅ Multi-format export
+</p>
+<br>
+
+<a href="https://t.me/OpenConstructionEstimate_bot">
+<img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Universal Bot"/>
+</a>
+<br><br>
+
 
 ```mermaid
 flowchart TB

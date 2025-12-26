@@ -385,18 +385,19 @@ Four production-ready workflows for automated construction cost estimation. Each
 
 Telegram bot for text-based cost estimation. Describe construction works in natural language — the bot parses input, searches the vector database, and returns detailed cost breakdowns.
 
-<h3 align="center">🤖 Try It Now — Live Demo Bots</h3>
-<p align="center"><i>Test the estimation workflows instantly in Telegram</i></p>
-<br>
-<h3>💬 Text-Only Bot</h3>
+<p align="center">
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/Text_Estimator_Bot.jpg" width="100%"/>
+  <br></br>
+</p>
+
+<h3 align="left">🤖 Try It Now — Live Demo Bots</h3>
+<p align="left"><i>Test the estimation workflows instantly in Telegram</i></p>
 <p><b>@TextOpenConstructionEstimate_bot</b></p>
 <p>Create complete cost estimates<br>from text descriptions</p>
 <a href="https://t.me/TextOpenConstructionEstimate_bot">
 <img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Text Bot"/>
 </a>
-
-
-
 
 ```mermaid
 flowchart LR
@@ -548,9 +549,15 @@ flowchart TB
 
 Full-featured Telegram bot supporting all input types: text descriptions, construction photos, and PDF floor plans. The most comprehensive workflow for production use.
 
-<h3 align="center">🤖 Try It Now — Live Demo Bots</h3>
-<p align="center"><i>Test the estimation workflows instantly in Telegram</i></p>
-<br>
+
+<p align="center">
+  <br>
+  <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/Universal%20Estimator%20Bot%20Text%20%20Photo%20PDF.jpg" width="100%"/>
+  <br></br>
+</p>
+
+<h3 align="left">🤖 Try It Now — Live Demo Bots</h3>
+<p align="left"><i>Test the estimation workflows instantly in Telegram</i></p>
 <h3>📷 Universal Bot</h3>
 <p><b>@OpenConstructionEstimate_bot</b></p>
 <p>Full-featured bot for<br>text, photos, and PDF</p>

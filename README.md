@@ -39,6 +39,8 @@
 <p><b>Input:</b> Telegram / chat message<br>
 <b>Output:</b> Matched work items + estimate</p>
 <br>
+<a href="#1️⃣-text-estimator-bot">📖 Documentation</a>
+<br><br>
 <a href="./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json">
 <img src="https://img.shields.io/badge/Download_Workflow-0A84FF?style=for-the-badge&logo=download&logoColor=white" alt="Download"/>
 </a>
@@ -52,6 +54,8 @@
 <p><b>Input:</b> Image or PDF pages<br>
 <b>Output:</b> Extracted scope → estimate</p>
 <br>
+<a href="#2️⃣-photo-cost-estimator">📖 Photo Docs</a> · <a href="#3️⃣-universal-estimator-bot-text--photo--pdf">📖 Universal Bot</a>
+<br><br>
 <a href="./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json">
 <img src="https://img.shields.io/badge/Photo_Workflow-0A84FF?style=for-the-badge&logo=download&logoColor=white" alt="Photo"/>
 </a>
@@ -69,6 +73,8 @@
 <p><b>Input:</b> Model export <br>
 <b>Output:</b> 4D/5D estimate + breakdown</p>
 <br>
+<a href="#4️⃣-cad-bim-cost-estimation-pipeline">📖 Documentation</a>
+<br><br>
 <a href="./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json">
 <img src="https://img.shields.io/badge/Download_Workflow-0A84FF?style=for-the-badge&logo=download&logoColor=white" alt="Download"/>
 </a>
@@ -109,18 +115,18 @@
 
 ### n8n Workflows
 - [n8n Workflows Overview](#-n8n-workflows) — Choose your input type
-- [Workflow 1: Text Estimator Bot](#1%EF%B8%8F⃣-text-estimator-bot) — Telegram bot for text input
-- [Workflow 2: Photo Cost Estimator](#2%EF%B8%8F⃣-photo-cost-estimator) — Web form with AI Vision
-- [Workflow 3: Universal Bot](#3%EF%B8%8F⃣-universal-estimator-bot-text--photo--pdf) — Text + Photo + PDF
-- [Workflow 4: CAD/BIM Pipeline](#4%EF%B8%8F⃣-cad-bim-cost-estimation-pipeline) — Revit/IFC/DWG to estimate
+- [Workflow 1: Text Estimator Bot](#1️⃣-text-estimator-bot) — Telegram bot for text input
+- [Workflow 2: Photo Cost Estimator](#2️⃣-photo-cost-estimator) — Web form with AI Vision
+- [Workflow 3: Universal Bot](#3️⃣-universal-estimator-bot-text--photo--pdf) — Text + Photo + PDF
+- [Workflow 4: CAD/BIM Pipeline](#4️⃣-cad-bim-cost-estimation-pipeline) — Revit/IFC/DWG to estimate
 - [Workflows Quick Start](#workflows-quick-start) — Setup in 4 steps
 
 ### CAD/BIM Pipeline Details
 - [Prerequisites](#-prerequisites) — Required components
 - [Pipeline Stages](#-pipeline-stages) — 10-stage processing
-- [LLM Model Selection](#%EF%B8%8F-llm-model-selection) — OpenAI, Claude, Gemini, Grok
+- [LLM Model Selection](#️-llm-model-selection) — OpenAI, Claude, Gemini, Grok
 - [Output Files](#-output-files) — HTML & Excel reports
-- [Troubleshooting](#%EF%B8%8F-troubleshooting) — Common issues
+- [Troubleshooting](#️-troubleshooting) — Common issues
 
 ### Vector Database
 - [Vector Database](#vector-database) — Semantic search with Qdrant
@@ -365,10 +371,10 @@ Four production-ready workflows for automated construction cost estimation. Each
 
 | # | Workflow | Input | Best For | Download |
 |---|----------|-------|----------|----------|
-| 1 | [Text Estimator Bot](#1%EF%B8%8F⃣-text-estimator-bot) | 💬 Text | Quick estimates from descriptions | [JSON](./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json) |
-| 2 | [Photo Estimator](#2%EF%B8%8F⃣-photo-cost-estimator) | 📷 Photo | Site visits, visual inspections | [JSON](./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json) |
-| 3 | [Universal Bot](#3%EF%B8%8F⃣-universal-estimator-bot-text--photo--pdf) | 💬📷📄 All | Full-featured production use | [JSON](./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json) |
-| 4 | [CAD/BIM Pipeline](#4%EF%B8%8F⃣-cad-bim-cost-estimation-pipeline) | 🏗️ Revit/IFC/DWG | BIM-based 4D/5D estimation | [JSON](./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json) |
+| 1 | [Text Estimator Bot](#1️⃣-text-estimator-bot) | 💬 Text | Quick estimates from descriptions | [JSON](./n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json) |
+| 2 | [Photo Estimator](#2️⃣-photo-cost-estimator) | 📷 Photo | Site visits, visual inspections | [JSON](./n8n_2_Photo_Cost_Estimate_DDC_CWICR.json) |
+| 3 | [Universal Bot](#3️⃣-universal-estimator-bot-text--photo--pdf) | 💬📷📄 All | Full-featured production use | [JSON](./n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json) |
+| 4 | [CAD/BIM Pipeline](#4️⃣-cad-bim-cost-estimation-pipeline) | 🏗️ Revit/IFC/DWG | BIM-based 4D/5D estimation | [JSON](./n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json) |
 
 ---
 
@@ -377,6 +383,81 @@ Four production-ready workflows for automated construction cost estimation. Each
 **File:** `n8n_1_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_DDC_CWICR.json`
 
 Telegram bot for text-based cost estimation. Describe construction works in natural language — the bot parses input, searches the vector database, and returns detailed cost breakdowns.
+
+```mermaid
+flowchart LR
+    subgraph Input["💬 INPUT"]
+        A[Telegram Message]
+    end
+    
+    subgraph AI["🤖 AI PROCESSING"]
+        B[Parse Text]
+        C[Extract Work Items]
+    end
+    
+    subgraph Search["🔍 VECTOR SEARCH"]
+        D[Generate Embeddings]
+        E[Qdrant Search]
+        F[AI Rerank]
+    end
+    
+    subgraph Output["📊 OUTPUT"]
+        G[Calculate Costs]
+        H[HTML Report]
+        I[Excel Export]
+    end
+    
+    A --> B --> C --> D --> E --> F --> G --> H
+    G --> I
+    
+    style Input fill:#e0f2fe,stroke:#0284c7
+    style AI fill:#fef3c7,stroke:#d97706
+    style Search fill:#dcfce7,stroke:#16a34a
+    style Output fill:#f3e8ff,stroke:#9333ea
+```
+
+```mermaid
+erDiagram
+    USER ||--o{ SESSION : has
+    SESSION ||--o{ WORK_ITEM : contains
+    WORK_ITEM ||--o{ MATCH : finds
+    MATCH }o--|| DDC_RATE : references
+    
+    USER {
+        string telegram_id PK
+        string language_code
+        string chat_id
+    }
+    
+    SESSION {
+        string session_id PK
+        datetime created_at
+        string status
+    }
+    
+    WORK_ITEM {
+        string item_id PK
+        string description
+        float quantity
+        string unit
+    }
+    
+    MATCH {
+        float similarity_score
+        string rate_code FK
+        float unit_cost
+        float total_cost
+    }
+    
+    DDC_RATE {
+        string rate_code PK
+        string rate_name
+        string rate_unit
+        float labor_cost
+        float material_cost
+        float equipment_cost
+    }
+```
 
 **How it works:**
 
@@ -412,6 +493,90 @@ Telegram bot for text-based cost estimation. Describe construction works in natu
 
 Web form interface for photo-based estimation. Upload a construction photo — AI Vision identifies elements, estimates dimensions, and calculates costs automatically.
 
+```mermaid
+flowchart TB
+    subgraph Upload["📷 PHOTO UPLOAD"]
+        A[Web Form]
+        B[Select Region]
+        C[Choose Work Type]
+    end
+    
+    subgraph Vision["👁️ AI VISION"]
+        D[GPT-4 Vision Analysis]
+        E[Identify Elements]
+        F[Estimate Dimensions]
+        G[Detect Room Type]
+    end
+    
+    subgraph Decompose["🔧 DECOMPOSITION"]
+        H[Elements → Work Items]
+        I[Calculate Quantities]
+    end
+    
+    subgraph Price["💰 PRICING"]
+        J[Vector Search]
+        K[Match DDC Rates]
+        L[Apply Regional Prices]
+    end
+    
+    subgraph Report["📄 REPORT"]
+        M[Generate HTML]
+        N[Cost Breakdown]
+    end
+    
+    A --> B --> C --> D
+    D --> E --> F --> G
+    G --> H --> I
+    I --> J --> K --> L
+    L --> M --> N
+    
+    style Upload fill:#dbeafe,stroke:#2563eb
+    style Vision fill:#fef3c7,stroke:#d97706
+    style Decompose fill:#dcfce7,stroke:#16a34a
+    style Price fill:#fee2e2,stroke:#dc2626
+    style Report fill:#f3e8ff,stroke:#9333ea
+```
+
+```mermaid
+erDiagram
+    PHOTO ||--o{ ELEMENT : contains
+    ELEMENT ||--o{ WORK : decomposes_to
+    WORK ||--o{ RESOURCE : requires
+    
+    PHOTO {
+        string photo_id PK
+        string room_type
+        float floor_area_m2
+        float wall_area_m2
+        string work_type
+    }
+    
+    ELEMENT {
+        string element_id PK
+        string element_type
+        string material
+        string surface_finish
+        float estimated_size
+        string unit
+    }
+    
+    WORK {
+        string work_id PK
+        string work_name
+        string rate_code FK
+        float quantity
+        float unit_cost
+        float total_cost
+    }
+    
+    RESOURCE {
+        string resource_type
+        string resource_name
+        float quantity
+        float cost
+    }
+```
+
 **How it works:**
 
 | Step | Action | Technology |
@@ -445,6 +610,131 @@ Web form interface for photo-based estimation. Upload a construction photo — A
 **File:** `n8n_3_Telegram_Bot_Cost_Estimates_and_Rate_Finder_TEXT_PHOTO_PDF_DDC_CWICR.json`
 
 Full-featured Telegram bot supporting all input types: text descriptions, construction photos, and PDF floor plans. The most comprehensive workflow for production use.
+
+```mermaid
+flowchart TB
+    subgraph Input["📥 MULTI-INPUT"]
+        A[💬 Text Message]
+        B[📷 Photo]
+        C[📄 PDF Document]
+    end
+    
+    subgraph Router["🔀 SMART ROUTER"]
+        D{Detect Type}
+    end
+    
+    subgraph TextPath["💬 TEXT PATH"]
+        E[AI Parse Text]
+        F[Extract Works]
+    end
+    
+    subgraph PhotoPath["📷 PHOTO PATH"]
+        G[Vision AI]
+        H[Identify Elements]
+        I[Decompose]
+    end
+    
+    subgraph PDFPath["📄 PDF PATH"]
+        J[Extract Pages]
+        K[Vision Analysis]
+        L[Parse Content]
+    end
+    
+    subgraph Common["🔍 COMMON PIPELINE"]
+        M[Generate Embeddings]
+        N[Qdrant Search]
+        O[AI Rerank]
+        P[Calculate Costs]
+    end
+    
+    subgraph Export["📤 EXPORT"]
+        Q[HTML Report]
+        R[Excel CSV]
+        S[PDF Document]
+    end
+    
+    A --> D
+    B --> D
+    C --> D
+    D -->|Text| E --> F --> M
+    D -->|Photo| G --> H --> I --> M
+    D -->|PDF| J --> K --> L --> M
+    M --> N --> O --> P
+    P --> Q
+    P --> R
+    P --> S
+    
+    style Input fill:#e0f2fe,stroke:#0284c7
+    style Router fill:#fef3c7,stroke:#d97706
+    style TextPath fill:#dcfce7,stroke:#16a34a
+    style PhotoPath fill:#fce7f3,stroke:#db2777
+    style PDFPath fill:#f3e8ff,stroke:#9333ea
+    style Common fill:#fee2e2,stroke:#dc2626
+    style Export fill:#d1fae5,stroke:#059669
+```
+
+```mermaid
+erDiagram
+    BOT ||--o{ USER : serves
+    USER ||--o{ SESSION : has
+    SESSION ||--|| LANGUAGE : uses
+    SESSION ||--o{ INPUT : receives
+    INPUT ||--o{ WORK_ITEM : extracts
+    WORK_ITEM ||--o{ RATE_MATCH : matches
+    RATE_MATCH }o--|| DDC_CWICR : references
+    SESSION ||--o{ EXPORT : generates
+    
+    BOT {
+        string bot_token PK
+        int action_count "17 actions"
+        boolean is_active
+    }
+    
+    USER {
+        string user_id PK
+        string telegram_id
+        string preferred_language
+    }
+    
+    SESSION {
+        string session_id PK
+        string input_type "text|photo|pdf"
+        datetime started_at
+        string state
+    }
+    
+    LANGUAGE {
+        string code PK "DE|EN|RU|ES|FR|PT|ZH|AR|HI"
+        string currency
+        string qdrant_collection
+    }
+    
+    INPUT {
+        string input_id PK
+        string content_type
+        blob raw_data
+    }
+    
+    WORK_ITEM {
+        string item_id PK
+        string description
+        float quantity
+        string unit
+        boolean is_edited
+    }
+    
+    RATE_MATCH {
+        string rate_code FK
+        float score
+        float unit_cost
+        float total_cost
+    }
+    
+    EXPORT {
+        string format "html|excel|pdf"
+        blob file_data
+    }
+```
 
 **How it works:**
 
@@ -500,6 +790,126 @@ Full-featured Telegram bot supporting all input types: text descriptions, constr
 **File:** `n8n_4_CAD_(BIM)_Cost_Estimation_Pipeline_4D_5D_with_DDC_CWICR.json`
 
 Automated cost estimation from Revit/IFC/DWG models. Extracts BIM data, classifies elements, decomposes into work items, and generates 4D/5D estimates with full resource breakdown.
+
+```mermaid
+flowchart TB
+    subgraph INPUT["📁 INPUT<br/><i>CAD • photos • text description</i>"]
+        CAD["📐 Project Input<br/>(text • photos • RVT / IFC / DWG)"]
+    end
+
+    subgraph EXTRACT["⚙️ EXTRACTION"]
+        CONV["RvtExporter.exe / CAD Export  / ETL"]
+        XLSX["📊 .XLSX<br/>(Raw Elements)"]
+    end
+
+    subgraph PREP["🔧 DATA PREPARATION"]
+        PREP_AI["🤖 AI: Clean & Classify<br/><i>headers • types • categories</i>"]
+    end
+
+    subgraph STAGE_PLAN["📋 STAGES 1–3: Planning"]
+        PLAN["🤖 Detect Project & Phases<br/><i>new / renovation / demolition</i><br/><i>small / medium / large</i><br/><i>elements → construction phases</i>"]
+    end
+
+    subgraph STAGE4["🔨 STAGE 4: Decomposition"]
+        S4["🤖 Decompose Types to Works<br/><i>'Brick Wall 240mm' → masonry, mortar, plaster</i>"]
+    end
+
+    subgraph STAGE5["💰 STAGE 5: Pricing"]
+        S5["🤖 Price via Vector DB<br/><i>OpenAI embeddings + Qdrant</i><br/><i>rate_code, unit_cost, resources</i>"]
+    end
+
+    subgraph STAGE75["✅ STAGE 7.5: Validation"]
+        S75["🤖 CTO Review<br/><i>completeness • duplicates • missing works</i>"]
+    end
+
+    subgraph OUTPUT["📤 OUTPUT"]
+        HTML["📄 HTML Report"]
+        XLS["📊 XLS Report"]
+    end
+
+    CAD --> CONV --> XLSX
+    XLSX --> PREP_AI --> PLAN --> S4 --> S5 --> S75
+    S75 --> HTML & XLS
+
+    style INPUT fill:#f4f4f5,stroke:#d4d4d8,color:#18181b
+    style EXTRACT fill:#e0f2fe,stroke:#bae6fd,color:#0f172a
+    style PREP fill:#ede9fe,stroke:#ddd6fe,color:#1e1b4b
+    style STAGE_PLAN fill:#ecfdf5,stroke:#bbf7d0,color:#064e3b
+    style STAGE4 fill:#fef9c3,stroke:#fef3c7,color:#78350f
+    style STAGE5 fill:#fee2e2,stroke:#fecaca,color:#7f1d1d
+    style STAGE75 fill:#e0f2f1,stroke:#bae5e1,color:#134e4a
+    style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
+```
+
+```mermaid
+erDiagram
+    BIM_MODEL ||--o{ BIM_ELEMENT : contains
+    BIM_ELEMENT ||--o{ ELEMENT_TYPE : has
+    ELEMENT_TYPE ||--o{ WORK_ITEM : decomposes_to
+    WORK_ITEM ||--o{ DDC_RATE : matches
+    DDC_RATE ||--o{ RESOURCE : includes
+    PROJECT ||--o{ PHASE : divided_into
+    PHASE ||--o{ WORK_ITEM : contains
+    
+    BIM_MODEL {
+        string file_path PK
+        string format "RVT|IFC|DWG"
+        string project_type
+        float total_area
+    }
+    
+    BIM_ELEMENT {
+        string element_id PK
+        string category
+        string family
+        float quantity
+        string unit
+    }
+    
+    ELEMENT_TYPE {
+        string type_name PK
+        string material
+        string dimensions
+        int element_count
+    }
+    
+    WORK_ITEM {
+        string work_id PK
+        string work_description
+        float quantity
+        string unit
+        string phase_id FK
+    }
+    
+    DDC_RATE {
+        string rate_code PK
+        string rate_name
+        float unit_cost
+        float labor_hours
+        float material_cost
+        float equipment_cost
+    }
+    
+    RESOURCE {
+        string resource_code
+        string resource_name
+        float quantity
+        float cost
+    }
+    
+    PROJECT {
+        string project_id PK
+        string project_type
+        string scale "small|medium|large"
+    }
+    
+    PHASE {
+        string phase_id PK
+        string phase_name
+        int sequence_order
+        float phase_cost
+    }
+```
 
 <p align="left">
   <a href="https://datadrivenconstruction.io">
@@ -603,56 +1013,6 @@ The CAD/BIM workflow processes data through 10 stages:
 | **7.5** | Validation | CTO review for completeness and duplicates |
 | **8** | Aggregation | Sum by phases and categories |
 | **9** | Report Generation | Create HTML and Excel outputs |
-
-```mermaid
-flowchart TB
-    subgraph INPUT["📁 INPUT<br/><i>CAD • photos • text description</i>"]
-        CAD["📐 Project Input<br/>(text • photos • RVT / IFC / DWG)"]
-    end
-
-    subgraph EXTRACT["⚙️ EXTRACTION"]
-        CONV["RvtExporter.exe / CAD Export  / ETL"]
-        XLSX["📊 .XLSX<br/>(Raw Elements)"]
-    end
-
-    subgraph PREP["🔧 DATA PREPARATION"]
-        PREP_AI["🤖 AI: Clean & Classify<br/><i>headers • types • categories</i>"]
-    end
-
-    subgraph STAGE_PLAN["📋 STAGES 1–3: Planning"]
-        PLAN["🤖 Detect Project & Phases<br/><i>new / renovation / demolition</i><br/><i>small / medium / large</i><br/><i>elements → construction phases</i>"]
-    end
-
-    subgraph STAGE4["🔨 STAGE 4: Decomposition"]
-        S4["🤖 Decompose Types to Works<br/><i>'Brick Wall 240mm' → masonry, mortar, plaster</i>"]
-    end
-
-    subgraph STAGE5["💰 STAGE 5: Pricing"]
-        S5["🤖 Price via Vector DB<br/><i>OpenAI embeddings + Qdrant</i><br/><i>rate_code, unit_cost, resources</i>"]
-    end
-
-    subgraph STAGE75["✅ STAGE 7.5: Validation"]
-        S75["🤖 CTO Review<br/><i>completeness • duplicates • missing works</i>"]
-    end
-
-    subgraph OUTPUT["📤 OUTPUT"]
-        HTML["📄 HTML Report"]
-        XLS["📊 XLS Report"]
-    end
-
-    CAD --> CONV --> XLSX
-    XLSX --> PREP_AI --> PLAN --> S4 --> S5 --> S75
-    S75 --> HTML & XLS
-
-    style INPUT fill:#f4f4f5,stroke:#d4d4d8,color:#18181b
-    style EXTRACT fill:#e0f2fe,stroke:#bae6fd,color:#0f172a
-    style PREP fill:#ede9fe,stroke:#ddd6fe,color:#1e1b4b
-    style STAGE_PLAN fill:#ecfdf5,stroke:#bbf7d0,color:#064e3b
-    style STAGE4 fill:#fef9c3,stroke:#fef3c7,color:#78350f
-    style STAGE5 fill:#fee2e2,stroke:#fecaca,color:#7f1d1d
-    style STAGE75 fill:#e0f2f1,stroke:#bae5e1,color:#134e4a
-    style OUTPUT fill:#eef2ff,stroke:#e0e7ff,color:#111827
-```
 
 ---
 

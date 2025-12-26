@@ -416,48 +416,7 @@ flowchart LR
     style Output fill:#f3e8ff,stroke:#9333ea
 ```
 
-```mermaid
-erDiagram
-    USER ||--o{ SESSION : has
-    SESSION ||--o{ WORK_ITEM : contains
-    WORK_ITEM ||--o{ MATCH : finds
-    MATCH }o--|| DDC_RATE : references
-    
-    USER {
-        string telegram_id PK
-        string language_code
-        string chat_id
-    }
-    
-    SESSION {
-        string session_id PK
-        datetime created_at
-        string status
-    }
-    
-    WORK_ITEM {
-        string item_id PK
-        string description
-        float quantity
-        string unit
-    }
-    
-    MATCH {
-        float similarity_score
-        string rate_code FK
-        float unit_cost
-        float total_cost
-    }
-    
-    DDC_RATE {
-        string rate_code PK
-        string rate_name
-        string rate_unit
-        float labor_cost
-        float material_cost
-        float equipment_cost
-    }
-```
+
 
 **How it works:**
 

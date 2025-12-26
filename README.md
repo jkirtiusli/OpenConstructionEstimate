@@ -24,52 +24,6 @@
   <img src="https://github.com/datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto/blob/main/DDC_in_additon/DDC_readme_content/OpenConstructionEstimate_bottom.jpg" alt="OpenConstructionEstimate" width="1000">
 </p>
 
----
-
-## 📑 Table of Contents
-
-### Database & Data
-- [About](#about) — What is DDC CWICR
-- [Available Formats](#available-formats) — Excel, Parquet, CSV, Qdrant
-- [Data Schema](#data-schema) — 85 fields structure
-- [Field Groups](#field-groups) — Classification, Resources, Labor, Machinery
-- [Methodology](#methodology) — Resource-based costing principles
-- [Historical Context](#historical-context) — 100+ years of standards
-
-### n8n Workflows
-- [n8n Workflows Overview](#-n8n-workflows) — Choose your input type
-- [Workflow 1: Text Estimator Bot](#1%EF%B8%8F⃣-text-estimator-bot) — Telegram bot for text input
-- [Workflow 2: Photo Cost Estimator](#2%EF%B8%8F⃣-photo-cost-estimator) — Web form with AI Vision
-- [Workflow 3: Universal Bot](#3%EF%B8%8F⃣-universal-estimator-bot-text--photo--pdf) — Text + Photo + PDF
-- [Workflow 4: CAD/BIM Pipeline](#4%EF%B8%8F⃣-cad-bim-cost-estimation-pipeline) — Revit/IFC/DWG to estimate
-- [Workflows Quick Start](#workflows-quick-start) — Setup in 4 steps
-
-### CAD/BIM Pipeline Details
-- [Prerequisites](#-prerequisites) — Required components
-- [Pipeline Stages](#-pipeline-stages) — 10-stage processing
-- [LLM Model Selection](#%EF%B8%8F-llm-model-selection) — OpenAI, Claude, Gemini, Grok
-- [Output Files](#-output-files) — HTML & Excel reports
-- [Troubleshooting](#%EF%B8%8F-troubleshooting) — Common issues
-
-### Vector Database
-- [Vector Database](#vector-database) — Semantic search with Qdrant
-- [Releases](#releases) — Download snapshots
-- [Collections](#collections) — 9 language collections
-- [Docker Deployment](#docker-deployment) — Self-hosted setup
-
-### Getting Started
-- [Quick Start - Python](#quick-start) — Tabular data & semantic search
-- [Integration Use Cases](#integration) — Entry to Advanced level
-
-### Community
-- [Resources & Community](#resources--community) — Links & channels
-- [Consulting & Training](#consulting--training) — Professional services
-- [Contributing](#contributing) — Submit your workflows
-- [License](#license) — CC BY 4.0 & MIT
-- [Support the Project](#support-the-project) — Sponsor & donate
-
----
-
 <h2 align="center">⚡ n8n Workflows</h2>
 <p align="center"><code>Choose your input → Get cost estimate</code></p>
 
@@ -139,6 +93,52 @@
   </a>   
   <br></br>
 </p>
+
+
+---
+
+## 📑 Table of Contents
+
+### Database & Data
+- [About](#about) — What is DDC CWICR
+- [Available Formats](#available-formats) — Excel, Parquet, CSV, Qdrant
+- [Data Schema](#data-schema) — 85 fields structure
+- [Field Groups](#field-groups) — Classification, Resources, Labor, Machinery
+- [Methodology](#methodology) — Resource-based costing principles
+- [Historical Context](#historical-context) — 100+ years of standards
+
+### n8n Workflows
+- [n8n Workflows Overview](#-n8n-workflows) — Choose your input type
+- [Workflow 1: Text Estimator Bot](#1%EF%B8%8F⃣-text-estimator-bot) — Telegram bot for text input
+- [Workflow 2: Photo Cost Estimator](#2%EF%B8%8F⃣-photo-cost-estimator) — Web form with AI Vision
+- [Workflow 3: Universal Bot](#3%EF%B8%8F⃣-universal-estimator-bot-text--photo--pdf) — Text + Photo + PDF
+- [Workflow 4: CAD/BIM Pipeline](#4%EF%B8%8F⃣-cad-bim-cost-estimation-pipeline) — Revit/IFC/DWG to estimate
+- [Workflows Quick Start](#workflows-quick-start) — Setup in 4 steps
+
+### CAD/BIM Pipeline Details
+- [Prerequisites](#-prerequisites) — Required components
+- [Pipeline Stages](#-pipeline-stages) — 10-stage processing
+- [LLM Model Selection](#%EF%B8%8F-llm-model-selection) — OpenAI, Claude, Gemini, Grok
+- [Output Files](#-output-files) — HTML & Excel reports
+- [Troubleshooting](#%EF%B8%8F-troubleshooting) — Common issues
+
+### Vector Database
+- [Vector Database](#vector-database) — Semantic search with Qdrant
+- [Releases](#releases) — Download snapshots
+- [Collections](#collections) — 9 language collections
+- [Docker Deployment](#docker-deployment) — Self-hosted setup
+
+### Getting Started
+- [Quick Start - Python](#quick-start) — Tabular data & semantic search
+- [Integration Use Cases](#integration) — Entry to Advanced level
+
+### Community
+- [Resources & Community](#resources--community) — Links & channels
+- [Consulting & Training](#consulting--training) — Professional services
+- [Contributing](#contributing) — Submit your workflows
+- [License](#license) — CC BY 4.0 & MIT
+- [Support the Project](#support-the-project) — Sponsor & donate
+
 
 ---
 

@@ -560,16 +560,7 @@ Full-featured Telegram bot supporting all input types: text descriptions, constr
 <p align="left"><i>Test the estimation workflows instantly in Telegram</i></p>
 <h3>📷 Universal Bot</h3>
 <p><b>@OpenConstructionEstimate_bot</b></p>
-<p>Full-featured bot for<br>text, photos, and PDF</p>
-<br>
-<p>
-✅ Text descriptions<br>
-✅ Construction site photos (AI Vision)<br>
-✅ PDF floor plans & scanned BOQ<br>
-✅ Multi-format export
-</p>
-<br>
-
+<p>Full-featured bot for text, photos, and PDF</p>
 <a href="https://t.me/OpenConstructionEstimate_bot">
 <img src="https://img.shields.io/badge/Open_Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Universal Bot"/>
 </a>

@@ -68,7 +68,7 @@
 
 <td align="center" valign="top">
 <br>
-<h3>🏗️ CAD / BIM</h3>
+<h3>🧊 CAD / BIM</h3>
 <p>Revit / IFC / DWG-based<br>quantification & estimating</p>
 <p><b>Input:</b> Model export <br>
 <b>Output:</b> 4D/5D estimate + breakdown</p>

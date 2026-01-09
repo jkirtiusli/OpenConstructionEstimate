@@ -24,3 +24,6 @@ export {
   type FilterUnit,
   type SmartFilterProps,
 } from './SmartFilter';
+
+// Region Selector - Dropdown for selecting active region/locale
+export { RegionSelector } from './RegionSelector';

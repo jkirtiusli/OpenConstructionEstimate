@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { CommandMenu } from '@/components/domain/navigation/CommandMenu';
+import { QueryProvider } from '@/lib/providers/QueryProvider';
 
 /* ============================================
    FONT CONFIGURATION
@@ -44,11 +45,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased bg-cloud text-soft-black">
-        {/* Global Command Menu - accessible via Ctrl/Cmd+K */}
-        <CommandMenu />
+        {/* React Query Provider for data fetching */}
+        <QueryProvider>
+          {/* Global Command Menu - accessible via Ctrl/Cmd+K */}
+          <CommandMenu />
 
-        {/* Main application content */}
-        {children}
+          {/* Main application content */}
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );

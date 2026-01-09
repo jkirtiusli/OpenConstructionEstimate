@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { RegionSelector } from '@/components/domain/navigation/RegionSelector';
 
 /* ============================================
    TYPE DEFINITIONS
@@ -241,6 +242,14 @@ export function MainSidebar({
           </div>
         )}
       </div>
+
+      {/* Region Selector */}
+      <div className={cn('px-3 py-3', isCollapsed && 'flex justify-center')}>
+        <RegionSelector compact={isCollapsed} />
+      </div>
+
+      {/* Divider */}
+      <div className="mx-3 h-px bg-border-muted" />
 
       {/* Navigation Items */}
       <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto scrollbar-hidden">

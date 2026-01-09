@@ -375,9 +375,9 @@ export function CommandMenu({
                 {commandGroups.map((group) => (
                   <Command.Group
                     key={group.id}
-                    heading={group.heading}
                     className="px-2 py-2"
                   >
+                    {/* Custom styled heading - uppercase with whisper color */}
                     <div className="px-2 pb-1.5 pt-3 text-xs font-medium uppercase tracking-wider text-whisper">
                       {group.heading}
                     </div>

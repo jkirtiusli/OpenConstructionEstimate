@@ -17,6 +17,9 @@ import type { SortingState, ColumnDef, VisibilityState } from "@tanstack/react-t
  *
  * Represents a single construction material, labor, or service
  * with pricing and quantity information.
+ *
+ * Extended fields are optional to maintain backward compatibility
+ * with existing mock data while supporting full DDC CWICR data.
  */
 export interface ConstructionItem {
   /** Unique identifier for the item */
@@ -45,6 +48,62 @@ export interface ConstructionItem {
 
   /** Optional notes or additional description */
   notas?: string;
+
+  /* ============================================
+     EXTENDED DDC CWICR FIELDS (Optional)
+     Added for compatibility with full dataset
+     ============================================ */
+
+  /** Original rate code from DDC data */
+  rateCode?: string;
+
+  /** Category type classification (MATERIAL, LABOR, EQUIPMENT) */
+  categoryType?: string;
+
+  /** Flag indicating if item is a material */
+  isMaterial?: boolean;
+
+  /** Flag indicating if item is labor-related */
+  isLabor?: boolean;
+
+  /** Flag indicating if item is machinery/equipment */
+  isMachine?: boolean;
+
+  /** Minimum price estimate */
+  priceMin?: number;
+
+  /** Maximum price estimate */
+  priceMax?: number;
+
+  /** Collection name for hierarchy navigation */
+  collectionName?: string;
+
+  /** Department name for hierarchy navigation */
+  departmentName?: string;
+
+  /** Section name for hierarchy navigation */
+  sectionName?: string;
+
+  /** Resource code (for resource-level items) */
+  resourceCode?: string;
+
+  /** Row type indicator (RATE, RESOURCE, COMPOSITE) */
+  rowType?: string;
+
+  /** Number of workers required */
+  countWorkers?: number;
+
+  /** Labor cost */
+  laborCost?: number;
+
+  /** Machine class classification */
+  machineClass?: string;
+
+  /** Position count in estimate */
+  positionCount?: number;
+
+  /** Technical group */
+  techGroup?: string;
 }
 
 /**

@@ -17,7 +17,7 @@
 :root {
   /* Background Surfaces */
   --color-paper: #FFFFFF;
-  --color-cloud: #EEEEF0;
+  --color-cloud: #F5F5F7;
   --color-mist: #F5F5F7;
 
   /* Text Hierarchy */
@@ -585,7 +585,7 @@
 @media print {
   body {
     background: white;
-    color: black;
+    color: #1D1D1F;
   }
 
   .no-print {
@@ -599,7 +599,7 @@
   }
 
   a {
-    color: black;
+    color: #1D1D1F;
     text-decoration: underline;
   }
 }

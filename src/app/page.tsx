@@ -1,17 +1,20 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { MainSidebar } from '@/components/layout/MainSidebar';
 import { BIMViewer } from '@/components/domain/bim/BIMViewer';
 import { DataTable } from '@/components/domain/data/DataTable';
-import { CostDonut, sampleCostData } from '@/components/domain/charts/CostDonut';
+import { CostDonut } from '@/components/domain/charts/CostDonut';
 import {
   TrendSparklineWithLabel,
   sampleCostTrend,
 } from '@/components/domain/charts/TrendSparkline';
 import { MOCK_CONSTRUCTION_ITEMS } from '@/components/domain/data/mockData';
+import { useWorkItems, useCostStats } from '@/hooks';
+import { useRegionStore } from '@/lib/stores/regionStore';
 import { formatCurrency } from '@/lib/utils';
 import { cn } from '@/lib/utils';
+import type { CostCategory } from '@/components/domain/charts/CostDonut';
 
 /* ============================================
    TYPE DEFINITIONS
@@ -22,6 +25,7 @@ interface MetricCardProps {
   value: string;
   trend?: React.ReactNode;
   className?: string;
+  isLoading?: boolean;
 }
 
 /* ============================================
@@ -29,7 +33,7 @@ interface MetricCardProps {
    Small stat card for key metrics
    ============================================ */
 
-function MetricCard({ label, value, trend, className }: MetricCardProps) {
+function MetricCard({ label, value, trend, className, isLoading }: MetricCardProps) {
   return (
     <div
       className={cn(
@@ -42,7 +46,11 @@ function MetricCard({ label, value, trend, className }: MetricCardProps) {
         {label}
       </p>
       <div className="flex items-end justify-between gap-4">
-        <p className="text-xl font-semibold text-carbon tabular-nums">{value}</p>
+        {isLoading ? (
+          <div className="skeleton h-7 w-24 rounded" />
+        ) : (
+          <p className="text-xl font-semibold text-carbon tabular-nums">{value}</p>
+        )}
         {trend}
       </div>
     </div>
@@ -58,9 +66,10 @@ interface BentoCardProps {
   title?: string;
   children: React.ReactNode;
   className?: string;
+  isLoading?: boolean;
 }
 
-function BentoCard({ title, children, className }: BentoCardProps) {
+function BentoCard({ title, children, className, isLoading }: BentoCardProps) {
   return (
     <div
       className={cn(
@@ -74,7 +83,13 @@ function BentoCard({ title, children, className }: BentoCardProps) {
           <h2 className="text-sm font-semibold text-carbon">{title}</h2>
         </div>
       )}
-      {children}
+      {isLoading ? (
+        <div className="p-6 flex items-center justify-center min-h-[200px]">
+          <div className="animate-pulse text-subtle">Loading...</div>
+        </div>
+      ) : (
+        children
+      )}
     </div>
   );
 }
@@ -86,18 +101,84 @@ function BentoCard({ title, children, className }: BentoCardProps) {
 
 export default function DashboardPage() {
   const [activeRoute, setActiveRoute] = useState('/');
+  const selectedRegion = useRegionStore((s) => s.selectedRegion);
+
+  // Fetch work items from API
+  const { data: workItemsData, isLoading: isLoadingItems, error: itemsError } = useWorkItems({
+    limit: 100,
+  });
+
+  // Fetch cost statistics from API
+  const { data: statsData, isLoading: isLoadingStats } = useCostStats();
 
   const handleNavigate = useCallback((route: string) => {
     setActiveRoute(route);
-    // In a real app, this would use Next.js router
     console.log('Navigate to:', route);
   }, []);
 
-  // Calculate total from mock data
-  const totalCost = MOCK_CONSTRUCTION_ITEMS.reduce(
-    (sum, item) => sum + item.subtotal,
-    0
-  );
+  // Use real data if available, fallback to mock
+  const displayItems = useMemo(() => {
+    if (workItemsData?.data && workItemsData.data.length > 0) {
+      // Map API response to ConstructionItem format
+      return workItemsData.data.map((item) => ({
+        id: item.id || item.code,
+        descripcion: item.description,
+        costoUnitario: item.unitCost,
+        cantidad: 1,
+        unidad: item.unit,
+        subtotal: item.unitCost,
+        categoria: item.category,
+      }));
+    }
+    return MOCK_CONSTRUCTION_ITEMS;
+  }, [workItemsData]);
+
+  // Calculate totals from real data or mock
+  const totalCost = useMemo(() => {
+    // Use categoryBreakdown total if available
+    if (statsData?.categoryBreakdown && statsData.categoryBreakdown.length > 0) {
+      return statsData.categoryBreakdown.reduce((sum, cat) => sum + (cat.totalValue || 0), 0);
+    }
+    return displayItems.reduce((sum, item) => sum + (item.subtotal || 0), 0);
+  }, [statsData, displayItems]);
+
+  const totalItems = useMemo(() => {
+    if (statsData?.overview?.totalWorkItems) {
+      return statsData.overview.totalWorkItems;
+    }
+    return workItemsData?.pagination?.total || displayItems.length;
+  }, [statsData, workItemsData, displayItems]);
+
+  // Convert stats to CostDonut format
+  const costBreakdownData: CostCategory[] = useMemo(() => {
+    if (statsData?.categoryBreakdown && statsData.categoryBreakdown.length > 0) {
+      return statsData.categoryBreakdown.slice(0, 8).map((cat, index) => ({
+        id: `cat-${index}`,
+        name: cat.category || 'Other',
+        value: cat.totalValue || 0,
+      }));
+    }
+    // Fallback to mock data categories
+    return [
+      { id: 'labor', name: 'Labor', value: 245000 },
+      { id: 'materials', name: 'Materials', value: 189000 },
+      { id: 'equipment', name: 'Equipment', value: 67000 },
+      { id: 'subcontractors', name: 'Subcontractors', value: 123000 },
+      { id: 'overhead', name: 'Overhead', value: 45000 },
+    ];
+  }, [statsData]);
+
+  const categoryCount = useMemo(() => {
+    if (statsData?.overview?.categoryCount) {
+      return statsData.overview.categoryCount;
+    }
+    if (statsData?.categoryBreakdown) {
+      return statsData.categoryBreakdown.length;
+    }
+    return 14;
+  }, [statsData]);
+
+  const isLoading = isLoadingItems || isLoadingStats;
 
   return (
     <div className="flex h-screen overflow-hidden bg-cloud">
@@ -126,6 +207,7 @@ export default function DashboardPage() {
               <MetricCard
                 label="Total Budget"
                 value={formatCurrency(totalCost, { compact: true })}
+                isLoading={isLoading}
                 trend={
                   <TrendSparklineWithLabel
                     data={sampleCostTrend}
@@ -137,11 +219,13 @@ export default function DashboardPage() {
               />
               <MetricCard
                 label="Line Items"
-                value={MOCK_CONSTRUCTION_ITEMS.length.toLocaleString()}
+                value={totalItems.toLocaleString()}
+                isLoading={isLoading}
               />
               <MetricCard
                 label="Categories"
-                value="14"
+                value={categoryCount.toString()}
+                isLoading={isLoading}
               />
             </div>
           </div>
@@ -149,10 +233,10 @@ export default function DashboardPage() {
           {/* Right Column - 40% - Data & Charts */}
           <div className="w-[40%] flex flex-col gap-3">
             {/* Cost Breakdown Donut */}
-            <BentoCard title="Budget Breakdown" className="shrink-0">
+            <BentoCard title="Budget Breakdown" className="shrink-0" isLoading={isLoadingStats}>
               <div className="p-4">
                 <CostDonut
-                  data={sampleCostData}
+                  data={costBreakdownData}
                   size={220}
                   showCenterTotal={true}
                   centerLabel="Total"
@@ -164,7 +248,9 @@ export default function DashboardPage() {
             <BentoCard title="Estimate Items" className="flex-1 min-h-0 flex flex-col">
               <div className="flex-1 min-h-0 overflow-hidden">
                 <DataTable
-                  data={MOCK_CONSTRUCTION_ITEMS}
+                  data={displayItems}
+                  isLoading={isLoadingItems}
+                  error={itemsError as Error | null}
                   enableSorting={true}
                   enableResizing={true}
                   enableSelection={true}

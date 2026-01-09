@@ -183,11 +183,11 @@ const EstimateCard = React.memo(function EstimateCard({
   return (
     <article
       className={cn(
-        // Base card styles from design system
-        "card-interactive",
+        // Base card styles (not card-interactive to avoid hover conflict)
+        "card",
         "group cursor-pointer",
         "flex flex-col overflow-hidden",
-        // Custom hover transform
+        // Hover transform: translateY(-4px) = -translate-y-1, shadow elevation
         "transition-all duration-200 ease-out",
         "hover:-translate-y-1 hover:shadow-soft-xl",
         // Focus state

@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { CommandMenu } from '@/components/domain/navigation/CommandMenu';
 
 /* ============================================
    FONT CONFIGURATION
-   Inter Tight for premium UI typography
+   Using system fonts with Inter as preferred when available.
+   Font stack defined in tailwind.config.ts and globals.css
    ============================================ */
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
-});
 
 /* ============================================
    METADATA
@@ -48,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <body className="font-sans antialiased bg-cloud text-soft-black">
         {/* Global Command Menu - accessible via Ctrl/Cmd+K */}
         <CommandMenu />

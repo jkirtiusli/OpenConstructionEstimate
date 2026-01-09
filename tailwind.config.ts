@@ -28,7 +28,7 @@ const config: Config = {
       colors: {
         // Background Surfaces
         paper: "#FFFFFF",
-        cloud: "#EEEEF0",  // Slightly darker for better contrast
+        cloud: "#F5F5F7",  // Apple grey - consistent with design system
         mist: "#F5F5F7",
 
         // Text Hierarchy - Never pure black
